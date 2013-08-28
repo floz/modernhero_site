@@ -7,10 +7,9 @@ module.exports = function ( grunt ) {
 	initConfig();
 
 	grunt.loadNpmTasks( "grunt-contrib-watch" );
-	grunt.loadNpmTasks( 'grunt-contrib-stylus' );
 	grunt.loadNpmTasks( 'grunt-contrib-jade' );
 	grunt.loadNpmTasks( "grunt-contrib-coffee" );
-	grunt.loadNpmTasks( "grunt-spritesmith" );
+	grunt.loadNpmTasks( "grunt-contrib-compass" );
 
 	grunt.registerTask( "default", "watch" );
 
@@ -30,7 +29,7 @@ module.exports = function ( grunt ) {
 
 		coffeesToWatch.reverse();
 
-		filesToWatch = [ "GruntFile.js", "./src/stylus/*.styl", "./src/jade/*.jade" ];
+		filesToWatch = [ "GruntFile.js", "./src/sass/*.scss", "./src/jade/*.jade" ];
 		filesToWatch = filesToWatch.concat( coffeesToWatch );
 	}
 
@@ -40,16 +39,7 @@ module.exports = function ( grunt ) {
 
 			watch: {
 				files: filesToWatch,
-				tasks: [ "coffee:compile", "stylus:compile", "jade:compile" ]
-			},
-
-			stylus: {
-				compile: {
-					files: {
-						"./deploy/css/reset.css": "./src/stylus/reset.styl",
-						"./deploy/css/main.css": "./src/stylus/main.styl"
-					}
-				}
+				tasks: [ "coffee:compile", "compass", "jade:compile" ]
 			},
 
 			jade: {
@@ -76,11 +66,11 @@ module.exports = function ( grunt ) {
 				}
 			},
 
-			sprite: {
-				all: {
-					src: "./deploy/img/sprite/*.png",
-					destImg: "./deploy/img/spritesheet.png",
-					destCss: "./deploy/css/spritesheet.css"
+			compass: {
+				dist: {
+					options: {
+						config: "./config.rb"
+					}
 				}
 			}
 		});

@@ -1,6 +1,117 @@
-html,body{width:100%;height:100%;background-color:#359cdc;font-family:'Graduate'}
-.menu{position:absolute;bottom:0;width:100%;background-color:#fff;overflow:hidden;height:70px;text-align:center}
-.menu__holder{display:inline-block}
-.menu__item{float:left;width:170px}
-.menu__link{text-decoration:none;color:#93c8f1;line-height:70px;display:block;font-size:13px;}
-.menu__link:hover{color:#359cdc;border-bottom:5px #359cdc solid;height:65px}
+/* line 1, ../../src/sass/main.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #359cdc;
+  font-family: 'Graduate';
+}
+
+/* line 8, ../../src/sass/main.scss */
+.background {
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+}
+
+/* line 14, ../../src/sass/main.scss */
+.background__line--blue_dark {
+  height: 165px;
+  background-color: #37a3e7;
+}
+
+/* line 19, ../../src/sass/main.scss */
+.background__line--blue_medium {
+  height: 110px;
+  background-color: #59b1e8;
+}
+
+/* line 24, ../../src/sass/main.scss */
+.background__line--blue_light {
+  height: 65px;
+  background-color: #b0d3e8;
+}
+
+/* line 29, ../../src/sass/main.scss */
+.background__line--yellow {
+  height: 55px;
+  background-color: #f8f4eb;
+}
+
+/* line 34, ../../src/sass/main.scss */
+.background__line--orange_light {
+  height: 25px;
+  background-color: #f8e9e0;
+}
+
+/* line 39, ../../src/sass/main.scss */
+.background__line--orange_medium {
+  height: 20px;
+  background-color: #f8dbce;
+}
+
+/* line 44, ../../src/sass/main.scss */
+.background__line--red {
+  height: 10px;
+  background-color: #f8d1c3;
+}
+
+/* line 49, ../../src/sass/main.scss */
+.background__line--green_dark {
+  height: 30px;
+  background-color: #a6aa59;
+}
+
+/* line 54, ../../src/sass/main.scss */
+.background__line--green_light {
+  height: 5px;
+  background-color: #c7cc6b;
+}
+
+/* line 59, ../../src/sass/main.scss */
+.background__line--brown {
+  height: 20px;
+  background-color: #e8af72;
+}
+
+/* line 64, ../../src/sass/main.scss */
+.content {
+  position: absolute;
+  bottom: 645px;
+}
+
+/* line 72, ../../src/sass/main.scss */
+.menu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  height: 70px;
+  text-align: center;
+}
+
+/* line 82, ../../src/sass/main.scss */
+.menu__holder {
+  display: inline-block;
+}
+
+/* line 86, ../../src/sass/main.scss */
+.menu__item {
+  float: left;
+  width: 170px;
+}
+
+/* line 91, ../../src/sass/main.scss */
+.menu__link {
+  text-decoration: none;
+  color: #93c8f1;
+  line-height: 70px;
+  display: block;
+  font-size: 13px;
+}
+/* line 97, ../../src/sass/main.scss */
+.menu__link:hover {
+  color: #359cdc;
+  border-bottom: 5px #359cdc solid;
+  height: 65px;
+}
