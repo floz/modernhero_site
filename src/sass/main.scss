@@ -1,8 +1,17 @@
+@import "_mixins/get_sprite.scss";
+
 html, body {
     width: 100%;
     height: 100%;
     background-color: #359cdc;
     font-family: 'Graduate';
+}
+
+.separator--light {
+    @include sprite-asset( separator_small_light );
+}
+.separator--vertical {
+    @include sprite-asset( separator_dots );
 }
 
 .background {
@@ -61,12 +70,142 @@ html, body {
     background-color: #e8af72;
 }
 
+.landscape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.landscape__fences {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 160px;
+}
+
+.landscape__fences--left {
+    @include sprite-asset( fence_left );
+    position: absolute;
+    left: 0;
+}
+
+.landscape__fences--right {
+    @include sprite-asset( fence_right );
+    position: absolute;
+    right: 0;
+}
+
 .content {
     position: absolute;
-    bottom: 645px;
+    width: 540px;
+    bottom: 179px;
+    left: 50%;
+    margin-left: -270px;
 }
 
 .logo {
+    margin: 0 auto;
+    position: relative;
+    width: 255px;
+    margin: 0 auto;
+}
+
+.logo__title {
+    @include sprite-asset( logo );
+}
+
+.logo__icon {
+    @include sprite-asset( logo_icon );
+    position: relative;
+    margin: 0 auto;
+    top: -23px;
+}
+
+.content__separator_big_dots {
+    position: relative;
+    top: -5px;
+    left: 3px;
+    margin: 0 auto;
+}
+
+.content__description {
+    text-align: center;
+    color: #d9efff;
+    font-size: 12px;
+    position: relative;
+    top: 3px;
+}
+
+.content__description--title {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.content__description--title,
+.content__description--link {
+    color: #fff;
+}
+
+.content__description--link:hover {
+    color: #d9efff;
+}
+
+.content__separator_vertical {
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.preview_world__banner {
+    @include sprite-asset( banner_white );
+    margin: 35px auto 0;
+    text-align: center;
+    color: #37a3e7;
+    font-size: 10px;
+    line-height: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.preview_world__button {
+    position: relative;
+    display: block;
+    width: 155px;
+    height: 65px;
+    margin: 0 auto;
+    top: -10px;
+    overflow: hidden;
+    span {
+        display: block;
+    }
+}
+
+.world_diaporama {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.world_diaporama__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.world_layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba( 95, 198, 255, .8 );
+}
+
+.world_layer__icon {
+    @include sprite-asset( world_layer_icon );
+    position: relative;
+    margin: -14px auto 0;
+    top: 50%;
 }
 
 .menu {

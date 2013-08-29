@@ -22,13 +22,37 @@ body
     .background__line--green_light
     .background__line--brown
 
+  .landscape
+    .landscape__clouds
+    .landscape__characters
+      .landscape__characters--human
+      .landscape__characters--dog
+    .landscape__tree
+    .landscape__fences
+      .landscape__fences--left
+      .landscape__fences--right
+
   .content
     .content__background
-    h1.logo
-      span.logo__icon
-    .content__separator.separator--blue
-    .content__description
-
+    .logo
+      .logo__title
+      .logo__icon
+    .content__separator_big_dots.separator--light
+    .content__description.
+      <h1 class="content__description--title">tales of heroes</h1>
+      is an epic pixel adventure game
+      <br />create by <a class="content__description--link" href="http://www.floz.fr">floz</a> & <a class="content__description--link" href="http://www.filsdegraphiste.fr/">fils de graphiste</a>
+    .content__separator_vertical.separator--vertical
+    .preview_world
+      .preview_world__banner
+        span VISIT THE WORLD
+      a.preview_world__button(href="#")
+        span.world_diaporama
+          img.world_diaporama__item(src="img/diaporama_world_mountain.jpg", width="155", height="65")
+          img.world_diaporama__item(src="img/diaporama_world_desert.jpg", width="155", height="65")
+          img.world_diaporama__item(src="img/diaporama_world_volcan.jpg", width="155", height="65")
+        span.world_layer
+          span.world_layer__icon
 
   .menu
     ul.menu__holder

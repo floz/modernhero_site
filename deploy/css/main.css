@@ -1,4 +1,4 @@
-/* line 1, ../../src/sass/main.scss */
+/* line 3, ../../src/sass/main.scss */
 html, body {
   width: 100%;
   height: 100%;
@@ -6,80 +6,259 @@ html, body {
   font-family: 'Graduate';
 }
 
-/* line 8, ../../src/sass/main.scss */
+/* line 10, ../../src/sass/main.scss */
+.separator--light {
+  background: url('../img/sprites-s0add075fda.png') 0 -1591px no-repeat;
+  height: 8px;
+  width: 8px;
+}
+
+/* line 13, ../../src/sass/main.scss */
+.separator--vertical {
+  background: url('../img/sprites-s0add075fda.png') 0 -1573px no-repeat;
+  height: 1px;
+  width: 257px;
+}
+
+/* line 17, ../../src/sass/main.scss */
 .background {
   position: absolute;
   bottom: 70px;
   width: 100%;
 }
 
-/* line 14, ../../src/sass/main.scss */
+/* line 23, ../../src/sass/main.scss */
 .background__line--blue_dark {
   height: 165px;
   background-color: #37a3e7;
 }
 
-/* line 19, ../../src/sass/main.scss */
+/* line 28, ../../src/sass/main.scss */
 .background__line--blue_medium {
   height: 110px;
   background-color: #59b1e8;
 }
 
-/* line 24, ../../src/sass/main.scss */
+/* line 33, ../../src/sass/main.scss */
 .background__line--blue_light {
   height: 65px;
   background-color: #b0d3e8;
 }
 
-/* line 29, ../../src/sass/main.scss */
+/* line 38, ../../src/sass/main.scss */
 .background__line--yellow {
   height: 55px;
   background-color: #f8f4eb;
 }
 
-/* line 34, ../../src/sass/main.scss */
+/* line 43, ../../src/sass/main.scss */
 .background__line--orange_light {
   height: 25px;
   background-color: #f8e9e0;
 }
 
-/* line 39, ../../src/sass/main.scss */
+/* line 48, ../../src/sass/main.scss */
 .background__line--orange_medium {
   height: 20px;
   background-color: #f8dbce;
 }
 
-/* line 44, ../../src/sass/main.scss */
+/* line 53, ../../src/sass/main.scss */
 .background__line--red {
   height: 10px;
   background-color: #f8d1c3;
 }
 
-/* line 49, ../../src/sass/main.scss */
+/* line 58, ../../src/sass/main.scss */
 .background__line--green_dark {
   height: 30px;
   background-color: #a6aa59;
 }
 
-/* line 54, ../../src/sass/main.scss */
+/* line 63, ../../src/sass/main.scss */
 .background__line--green_light {
   height: 5px;
   background-color: #c7cc6b;
 }
 
-/* line 59, ../../src/sass/main.scss */
+/* line 68, ../../src/sass/main.scss */
 .background__line--brown {
   height: 20px;
   background-color: #e8af72;
 }
 
-/* line 64, ../../src/sass/main.scss */
-.content {
+/* line 73, ../../src/sass/main.scss */
+.landscape {
   position: absolute;
-  bottom: 645px;
+  width: 100%;
+  height: 100%;
 }
 
-/* line 72, ../../src/sass/main.scss */
+/* line 79, ../../src/sass/main.scss */
+.landscape__fences {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 160px;
+}
+
+/* line 86, ../../src/sass/main.scss */
+.landscape__fences--left {
+  background: url('../img/sprites-s0add075fda.png') 0 -720px no-repeat;
+  height: 57px;
+  width: 83px;
+  position: absolute;
+  left: 0;
+}
+
+/* line 92, ../../src/sass/main.scss */
+.landscape__fences--right {
+  background: url('../img/sprites-s0add075fda.png') 0 -663px no-repeat;
+  height: 57px;
+  width: 83px;
+  position: absolute;
+  right: 0;
+}
+
+/* line 98, ../../src/sass/main.scss */
+.content {
+  position: absolute;
+  width: 540px;
+  bottom: 179px;
+  left: 50%;
+  margin-left: -270px;
+}
+
+/* line 106, ../../src/sass/main.scss */
+.logo {
+  margin: 0 auto;
+  position: relative;
+  width: 255px;
+  margin: 0 auto;
+}
+
+/* line 113, ../../src/sass/main.scss */
+.logo__title {
+  background: url('../img/sprites-s0add075fda.png') 0 -363px no-repeat;
+  height: 143px;
+  width: 255px;
+}
+
+/* line 117, ../../src/sass/main.scss */
+.logo__icon {
+  background: url('../img/sprites-s0add075fda.png') 0 -558px no-repeat;
+  height: 105px;
+  width: 111px;
+  position: relative;
+  margin: 0 auto;
+  top: -23px;
+}
+
+/* line 124, ../../src/sass/main.scss */
+.content__separator_big_dots {
+  position: relative;
+  top: -5px;
+  left: 3px;
+  margin: 0 auto;
+}
+
+/* line 131, ../../src/sass/main.scss */
+.content__description {
+  text-align: center;
+  color: #d9efff;
+  font-size: 12px;
+  position: relative;
+  top: 3px;
+}
+
+/* line 139, ../../src/sass/main.scss */
+.content__description--title {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 146, ../../src/sass/main.scss */
+.content__description--title,
+.content__description--link {
+  color: #fff;
+}
+
+/* line 150, ../../src/sass/main.scss */
+.content__description--link:hover {
+  color: #d9efff;
+}
+
+/* line 154, ../../src/sass/main.scss */
+.content__separator_vertical {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+/* line 159, ../../src/sass/main.scss */
+.preview_world__banner {
+  background: url('../img/sprites-s0add075fda.png') 0 -1056px no-repeat;
+  height: 39px;
+  width: 235px;
+  margin: 35px auto 0;
+  text-align: center;
+  color: #37a3e7;
+  font-size: 10px;
+  line-height: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 170, ../../src/sass/main.scss */
+.preview_world__button {
+  position: relative;
+  display: block;
+  width: 155px;
+  height: 65px;
+  margin: 0 auto;
+  top: -10px;
+  overflow: hidden;
+}
+/* line 178, ../../src/sass/main.scss */
+.preview_world__button span {
+  display: block;
+}
+
+/* line 183, ../../src/sass/main.scss */
+.world_diaporama {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* line 189, ../../src/sass/main.scss */
+.world_diaporama__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 195, ../../src/sass/main.scss */
+.world_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(95, 198, 255, 0.8);
+}
+
+/* line 204, ../../src/sass/main.scss */
+.world_layer__icon {
+  background: url('../img/sprites-s0add075fda.png') 0 -1477px no-repeat;
+  height: 27px;
+  width: 27px;
+  position: relative;
+  margin: -14px auto 0;
+  top: 50%;
+}
+
+/* line 211, ../../src/sass/main.scss */
 .menu {
   position: absolute;
   bottom: 0;
@@ -90,18 +269,18 @@ html, body {
   text-align: center;
 }
 
-/* line 82, ../../src/sass/main.scss */
+/* line 221, ../../src/sass/main.scss */
 .menu__holder {
   display: inline-block;
 }
 
-/* line 86, ../../src/sass/main.scss */
+/* line 225, ../../src/sass/main.scss */
 .menu__item {
   float: left;
   width: 170px;
 }
 
-/* line 91, ../../src/sass/main.scss */
+/* line 230, ../../src/sass/main.scss */
 .menu__link {
   text-decoration: none;
   color: #93c8f1;
@@ -109,7 +288,7 @@ html, body {
   display: block;
   font-size: 13px;
 }
-/* line 97, ../../src/sass/main.scss */
+/* line 236, ../../src/sass/main.scss */
 .menu__link:hover {
   color: #359cdc;
   border-bottom: 5px #359cdc solid;
