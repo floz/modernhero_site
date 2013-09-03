@@ -24,9 +24,15 @@ body
 
   .landscape
     .landscape__clouds
+      .landscape__cloud.landscape__cloud--cloud0
+      .landscape__cloud.landscape__cloud--cloud1
+      .landscape__cloud.landscape__cloud--cloud2
+      .landscape__cloud.landscape__cloud--cloud3
+      .landscape__cloud.landscape__cloud--cloud4 
     .landscape__characters
-      .landscape__characters--human
-      .landscape__characters--dog
+      .landscape__character.landscape__character--human
+        .selector.selector--human
+      .landscape__character.landscape__character--dog
     .landscape__tree
     .landscape__fences
       .landscape__fences--left
@@ -48,11 +54,40 @@ body
         span VISIT THE WORLD
       a.preview_world__button(href="#")
         span.world_diaporama
-          img.world_diaporama__item(src="img/diaporama_world_mountain.jpg", width="155", height="65")
-          img.world_diaporama__item(src="img/diaporama_world_desert.jpg", width="155", height="65")
-          img.world_diaporama__item(src="img/diaporama_world_volcan.jpg", width="155", height="65")
+          img.world_diaporama__item(src="img/world_diaporama_mountain.jpg", width="155", height="65")
+          img.world_diaporama__item(src="img/world_diaporama_desert.jpg", width="155", height="65")
+          img.world_diaporama__item(src="img/world_diaporama_volcan.jpg", width="155", height="65")
         span.world_layer
           span.world_layer__icon
+
+  #layer_content.layer.layer--dark
+
+  .gallery
+    a.gallery__bt_close(href="#")
+      span.gallery__bt_close__icon
+    .gallery__diaporama_holder
+      ul.gallery_diaporama
+        li.gallery_diaporama__item
+          img(src="img/gallery_diaporama_0.jpg", width="319", height="478")
+        li.gallery_diaporama__item
+          img(src="img/gallery_diaporama_1.jpg", width="319", height="478")
+        li.gallery_diaporama__item
+          img(src="img/gallery_diaporama_2.jpg", width="319", height="478")
+        li.gallery_diaporama__item
+          img(src="img/gallery_diaporama_3.jpg", width="319", height="478")
+        li.gallery_diaporama__item
+          img(src="img/gallery_diaporama_4.jpg", width="319", height="478")
+        li.gallery_diaporama__item
+          img(src="img/gallery_diaporama_5.jpg", width="319", height="478")
+        li.gallery_diaporama__item
+          img(src="img/gallery_diaporama_6.jpg", width="319", height="478")
+      .gallery__controller
+        .gallery__controller__bt.gallery__controller__bt--top
+        .gallery__controller__pagination.gallery__controller__pagination--current 01
+        .gallery__controller__separator.separator--gray
+        .gallery__controller__pagination.gallery__controller__pagination--total 06
+        .gallery__controller__bt.gallery__controller__bt--bottom
+
 
   .menu
     ul.menu__holder

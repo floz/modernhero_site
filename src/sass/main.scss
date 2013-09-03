@@ -10,8 +10,17 @@ html, body {
 .separator--light {
     @include sprite-asset( separator_small_light );
 }
+
+.separator--gray {
+    @include sprite-asset( separator_small_gray );
+}
+
 .separator--vertical {
     @include sprite-asset( separator_dots );
+}
+
+.selector {
+    @include sprite-asset( perso_selector );
 }
 
 .background {
@@ -76,6 +85,82 @@ html, body {
     height: 100%;
 }
 
+.landscape__clouds {
+    position: absolute;
+    bottom: 560px;
+    width: 100%;
+}
+
+.landscape__cloud {
+    position: absolute;
+    left: 50%;
+}
+
+.landscape__cloud--cloud0 {
+    @include sprite-asset( cloud0 );
+    margin-left: 220px;
+    top: -18px;
+}
+
+.landscape__cloud--cloud1 {
+    @include sprite-asset( cloud1 );
+    margin-left: 285px;
+    top: 55px;
+}
+
+.landscape__cloud--cloud2 {
+    @include sprite-asset( cloud2 );
+    margin-left: -320px;
+    top: 50px;
+}
+
+.landscape__cloud--cloud3 {
+    @include sprite-asset( cloud3 );
+    margin-left: -210px;
+}
+
+.landscape__cloud--cloud4 {
+    @include sprite-asset( cloud4 );
+    margin-left: 150px;
+    top: 40px;
+}
+
+.landscape__characters {
+    position: absolute;
+    width: 100%;
+    bottom: 279px;
+}
+
+.landscape__character {
+    position: absolute;
+    left: 50%;
+}
+
+.landscape__character--human {
+    @include sprite-asset( perso );
+    margin-left: -200px;
+}
+
+.selector--human {
+    position: relative;
+    top: -30px;
+    margin: 0 auto;
+}
+
+.landscape__character--dog {
+    @include sprite-asset( dog );
+    margin-left: -170px;
+    top: 106px;
+}
+
+.landscape__tree {
+    @include sprite-asset( tree );
+    position: absolute;
+    left: 50%;
+    margin-left: 140px;
+    bottom: 118px;
+}
+
 .landscape__fences {
     position: absolute;
     width: 100%;
@@ -112,19 +197,20 @@ html, body {
 
 .logo__title {
     @include sprite-asset( logo );
+    position: relative;
+    left: 5px;
 }
 
 .logo__icon {
     @include sprite-asset( logo_icon );
     position: relative;
     margin: 0 auto;
-    top: -23px;
+    top: -28px;
 }
 
 .content__separator_big_dots {
     position: relative;
     top: -5px;
-    left: 3px;
     margin: 0 auto;
 }
 
@@ -208,6 +294,109 @@ html, body {
     top: 50%;
 }
 
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.layer--dark {
+    background-color: rgba( 0, 0, 0, .5 );
+}
+
+.gallery {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery__bt_close {
+    @include sprite-asset( bt_close_top_bg );
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    &:hover {
+        .gallery__bt_close__icon {
+            @include sprite-asset( bt_close_over );
+        }
+    }
+}
+
+.gallery__bt_close__icon {
+    @include sprite-asset( bt_close_normal );
+    position: relative;
+    top: 50%;
+    margin-top: -28px;
+    display: inline-block;
+}
+
+.gallery__diaporama_holder {
+    position: relative;
+    top: 50%;
+    margin: -310px;
+    height: 478px;
+}
+
+.gallery_diaporama {
+    position: relative;
+    width: 319px;
+    height: 478px;
+    overflow: hidden;
+    margin: 0 auto 0;
+    
+}
+
+.gallery__controller {
+    position: relative;
+    width: 80px;
+    left: 50%;
+    top: -50%;
+    margin-left: 230px;
+    margin-top: -86px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.gallery__controller__bt {
+    cursor: pointer;
+}
+
+.gallery__controller__bt--top {
+    @include sprite-asset( bt_prev_normal );
+    &:hover {
+        @include sprite-asset( bt_prev_over );
+    }
+}
+
+.gallery__controller__pagination {
+    font-size: 30px;
+    color: #dfdfdf;
+}
+
+.gallery__controller__pagination--current {
+    margin-top: 5px;
+}
+
+.gallery__controller__separator {
+    margin: 3px auto;
+}
+
+.gallery__controller__pagination--total {
+    margin-bottom: 5px;
+}
+
+.gallery__controller__bt--bottom {
+    @include sprite-asset( bt_next_normal );
+    &:hover {
+        @include sprite-asset( bt_next_over );
+    }
+}
+
 .menu {
     position: absolute;
     bottom: 0;
@@ -216,6 +405,7 @@ html, body {
     overflow: hidden;
     height: 70px;
     text-align: center;
+    z-index: 2;
 }
 
 .menu__holder {
@@ -237,6 +427,8 @@ html, body {
         color: #359cdc;
         border-bottom: 5px #359cdc solid;
         height: 65px;
+        background: transparent image-url( 'menu_arrow.png' ) no-repeat left top;
+        background-position: 30px 30px;
     }
 }
 
