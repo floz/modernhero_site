@@ -23,6 +23,40 @@ html, body {
     @include sprite-asset( perso_selector );
 }
 
+.bt_close {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    &:hover {
+        .bt_close__icon {
+            @include sprite-asset( bt_close_over );
+        }
+    }
+}
+
+.bt_close--gallery {
+    @include sprite-asset( bt_close_top_bg );
+}
+
+.bt_close--contact {
+    @include sprite-asset( bt_close_bottom_bg );
+}
+
+.bt_close__icon {
+    @include sprite-asset( bt_close_normal );
+    position: relative;
+    top: 50%;
+    margin-top: -28px;
+    display: inline-block;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .background {
     position: absolute;
     bottom: 70px;
@@ -312,34 +346,17 @@ html, body {
     z-index: 2;
     width: 100%;
     height: 100%;
-}
-
-.gallery__bt_close {
-    @include sprite-asset( bt_close_top_bg );
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    &:hover {
-        .gallery__bt_close__icon {
-            @include sprite-asset( bt_close_over );
-        }
-    }
-}
-
-.gallery__bt_close__icon {
-    @include sprite-asset( bt_close_normal );
-    position: relative;
-    top: 50%;
-    margin-top: -28px;
-    display: inline-block;
+    display: none;
 }
 
 .gallery__diaporama_holder {
-    position: relative;
+    position: absolute;
     top: 50%;
-    margin: -310px;
+    left: 50%;
+    width: 470px;
     height: 478px;
+    margin-left: -235px;
+    margin-top: -239px;
 }
 
 .gallery_diaporama {
@@ -395,6 +412,39 @@ html, body {
     &:hover {
         @include sprite-asset( bt_next_over );
     }
+}
+
+.contact {
+    position: absolute;
+    bottom: 70px;
+    background-color: #fff;
+    width: 100%;
+    height: 105px;
+    border-bottom: 1px solid #eee;
+}
+
+.contact__banner {
+    @include sprite-asset( banner_orange );
+    position: relative;
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+.contact__banner__description {
+    position: relative;
+    font-size: 9px;
+    width: 300px;
+    margin: 0 auto;
+    color: #fff;
+    top: 5px;
+}
+
+.bt_close--contact {
+    top: -72px;
+    position: absolute;
+    margin: 0;
+    margin-left: -36px;
+    left: 50%;
 }
 
 .menu {
