@@ -97,9 +97,13 @@ body
         give us your e-mail to keep informed about the project, or 
         don't hesitate to contact us about our projects
     .contact__inputs
-      a.bt_basic.bt_basic--contact(href="#") Contact us
+      a.bt_basic.bt_basic--contact(href="mailto:florian.zumbrunn@gmail.com") Contact us
       .contact__inputs__separator.separator--gray
-      
+      form.contact__form(name="form", action="#", method="post")
+        input#input_mail.input.input--mail(type="email", placeholder="Enter your email", name="mail")
+        input.bt_basic.bt_basic--form(type="submit", value="SEND")
+
+
 
   .menu
     ul.menu__holder

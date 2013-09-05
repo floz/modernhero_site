@@ -563,6 +563,79 @@ html, body {
 }
 
 /* line 442, ../../src/sass/main.scss */
+.contact__inputs {
+  position: relative;
+  margin: 10px auto 0;
+  overflow: hidden;
+  width: 354px;
+  height: 36px;
+}
+
+/* line 450, ../../src/sass/main.scss */
+.contact__inputs__separator {
+  position: relative;
+  top: 50%;
+  margin: -4px 20px 0;
+  float: left;
+}
+
+/* line 457, ../../src/sass/main.scss */
+.contact__form {
+  float: left;
+}
+
+/* line 461, ../../src/sass/main.scss */
+.bt_basic {
+  background-color: #fff;
+  color: #ff993e;
+  text-decoration: none;
+  border: 1px solid #eee;
+  font-size: 14px;
+  padding: 10px;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: 'Graduate';
+  display: block;
+}
+
+/* line 474, ../../src/sass/main.scss */
+.bt_basic--form {
+  padding: 9px;
+  float: left;
+  cursor: pointer;
+}
+
+/* line 480, ../../src/sass/main.scss */
+.bt_basic--contact {
+  float: left;
+}
+
+/* line 484, ../../src/sass/main.scss */
+.input {
+  background-color: #f8f8f8;
+  color: #adadad;
+  font-size: 10px;
+  height: 25px;
+  border: 0;
+  border-bottom: 3px solid #fbfbfb;
+  font-family: 'Graduate';
+  padding-left: 5px;
+  padding-top: 5px;
+}
+/* line 494, ../../src/sass/main.scss */
+.input:focus {
+  outline: none;
+  background-color: #f0f0f0;
+}
+
+/* line 500, ../../src/sass/main.scss */
+.input--mail {
+  margin-top: 2px;
+  margin-right: 10px;
+  float: left;
+}
+
+/* line 506, ../../src/sass/main.scss */
 .bt_close--contact {
   top: -72px;
   position: absolute;
@@ -571,7 +644,7 @@ html, body {
   left: 50%;
 }
 
-/* line 450, ../../src/sass/main.scss */
+/* line 514, ../../src/sass/main.scss */
 .menu {
   position: absolute;
   bottom: 0;
@@ -583,18 +656,18 @@ html, body {
   z-index: 2;
 }
 
-/* line 461, ../../src/sass/main.scss */
+/* line 525, ../../src/sass/main.scss */
 .menu__holder {
   display: inline-block;
 }
 
-/* line 465, ../../src/sass/main.scss */
+/* line 529, ../../src/sass/main.scss */
 .menu__item {
   float: left;
   width: 170px;
 }
 
-/* line 470, ../../src/sass/main.scss */
+/* line 534, ../../src/sass/main.scss */
 .menu__link {
   text-decoration: none;
   color: #93c8f1;
@@ -602,7 +675,7 @@ html, body {
   display: block;
   font-size: 13px;
 }
-/* line 476, ../../src/sass/main.scss */
+/* line 540, ../../src/sass/main.scss */
 .menu__link:hover {
   color: #359cdc;
   border-bottom: 5px #359cdc solid;
