@@ -2,18 +2,24 @@ class Gallery
 
 	_$base: null
 	_$layer: null
+	_$btClose: null
 	_opened: false
 
 	constructor: ->
 		@_$base = $( "#gallery" )
 		@_$layer = $( "#layer" )
+		@_$btClose = $( "#bt_close_gallery" )
 
 	show: ->
 		return if @_opened
 		@_opened = true
 		@_$base.css "display", "block"
-		console.log @_$layer
 		@_$layer.css "display", "block"
+		@_$btClose.click @_closeClickHandler
+
+	_closeClickHandler: ( e ) =>
+		e.preventDefault()
+		@hide()
 
 	hide: ->
 		return if !@_opened
