@@ -24,22 +24,22 @@ body
       .background__line--brown
 
     .landscape
-      .landscape__clouds
+      #clouds.landscape__clouds
         .landscape__cloud.landscape__cloud--cloud0
         .landscape__cloud.landscape__cloud--cloud1
         .landscape__cloud.landscape__cloud--cloud2
         .landscape__cloud.landscape__cloud--cloud3
         .landscape__cloud.landscape__cloud--cloud4 
-      .landscape__characters
+      #characters.landscape__characters
         .landscape__character.landscape__character--human
           .selector.selector--human
         .landscape__character.landscape__character--dog
-      .landscape__tree
-      .landscape__fences
+      #tree.landscape__tree
+      #fences.landscape__fences
         .landscape__fences--left
         .landscape__fences--right
 
-    .content
+    #content.content
       .content__background
       .logo
         .logo__title
@@ -48,12 +48,12 @@ body
       .content__description.
         <h1 class="content__description--title">tales of heroes</h1>
         is an epic pixel adventure game
-        <br />create by <a class="content__description--link" href="http://www.floz.fr">floz</a> & <a class="content__description--link" href="http://cargocollective.com/filsdegraphiste/">filsdegraphiste</a>
+        <br />created by <a class="content__description--link" href="http://www.floz.fr">floz</a> & <a class="content__description--link" href="http://cargocollective.com/filsdegraphiste/">filsdegraphiste</a>
       .content__separator_vertical.separator--vertical
       .preview_world
         .preview_world__banner
           span VISIT THE WORLD
-        a.preview_world__button(href="#")
+        a#preview_world.preview_world__button(href="#")
           span.world_diaporama
             img.world_diaporama__item(src="img/world_diaporama_mountain.jpg", width="155", height="65")
             img.world_diaporama__item(src="img/world_diaporama_desert.jpg", width="155", height="65")
@@ -61,9 +61,9 @@ body
           span.world_layer
             span.world_layer__icon
 
-  //- #layer_content.layer.layer--dark
+  #layer.layer.layer--dark
 
-  .gallery
+  #gallery.gallery
     a.bt_close.bt_close--gallery(href="#")
       span.bt_close__icon
     .gallery__diaporama_holder
@@ -89,7 +89,7 @@ body
         .gallery__controller__pagination.gallery__controller__pagination--total 06
         .gallery__controller__bt.gallery__controller__bt--bottom
 
-  .contact
+  #contact.contact
     a.bt_close.bt_close--contact(href="#")
       span.bt_close__icon
     .contact__banner
@@ -103,16 +103,14 @@ body
         input#input_mail.input.input--mail(type="email", placeholder="Enter your email", name="mail")
         input.bt_basic.bt_basic--form(type="submit", value="SEND")
 
-
-
-  .menu
+  #menu.menu
     ul.menu__holder
       li.menu__item.selected
-        a.menu__link(href='#') ABOUT
+        a#btMenuAbout.menu__link(href='#') ABOUT
       li.menu__item 
-        a.menu__link(href='#') GALLERY
+        a#btMenuGallery.menu__link(href='#') GALLERY
       li.menu__item 
-        a.menu__link(href='#') CONTACTS
+        a#btMenuContact.menu__link(href='#') CONTACTS
 
 
   script(src='./js/vendors/requestAnimationFrame.js')
