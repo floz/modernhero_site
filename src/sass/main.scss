@@ -1,10 +1,12 @@
 @import "_mixins/get_sprite.scss";
+@import "compass/css3";
 
 html, body {
     width: 100%;
     height: 100%;
     background-color: #359cdc;
     font-family: 'Graduate';
+    overflow: hidden;
 }
 
 .separator--light {
@@ -15,7 +17,7 @@ html, body {
     @include sprite-asset( separator_small_gray );
 }
 
-.separator--vertical {
+.separator--horizontal {
     @include sprite-asset( separator_dots );
 }
 
@@ -63,59 +65,72 @@ html, body {
     height: 100%;
 }
 
-.background {
+.background,
+.background__sky,
+.background__ground {
     position: absolute;
-    bottom: 70px;
+    // bottom: 70px;
     width: 100%;
+    height: 100%;
+}
+
+.background {
+    overflow: hidden;
+}
+
+.background__line {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .background__line--blue_dark {
-    height: 165px;
+    height: 575px;
     background-color: #37a3e7;
 }
 
 .background__line--blue_medium {
-    height: 110px;
+    height: 410px;
     background-color: #59b1e8;
 }
 
 .background__line--blue_light {
-    height: 65px;
+    height: 300px;
     background-color: #b0d3e8;
 }
 
 .background__line--yellow {
-    height: 55px;
+    height: 235px;
     background-color: #f8f4eb;
 }
 
 .background__line--orange_light {
-    height: 25px;
+    height: 180px;
     background-color: #f8e9e0;
 }
 
 .background__line--orange_medium {
-    height: 20px;
+    height: 155px;
     background-color: #f8dbce;
 }
 
 .background__line--red {
-    height: 10px;
+    height: 135px;
     background-color: #f8d1c3;
 }
 
 .background__line--green_dark {
-    height: 30px;
+    height: 125px;
     background-color: #a6aa59;
 }
 
 .background__line--green_light {
-    height: 5px;
+    height: 95px;
     background-color: #c7cc6b;
 }
 
 .background__line--brown {
-    height: 20px;
+    height: 90px;
     background-color: #e8af72;
 }
 
@@ -123,6 +138,8 @@ html, body {
     position: absolute;
     width: 100%;
     height: 100%;
+    @include perspective( 1000 );
+    @include perspective-origin( 50% 50% );
 }
 
 .landscape__clouds {
@@ -179,6 +196,8 @@ html, body {
 .landscape__character--human {
     @include sprite-asset( perso );
     margin-left: -200px;
+    @include transform-style( preserve-3d );
+    @include transform-origin( 0%, 100% );
 }
 
 .selector--human {
@@ -191,6 +210,8 @@ html, body {
     @include sprite-asset( dog );
     margin-left: -170px;
     top: 106px;
+    @include transform-style( preserve-3d );
+    @include transform-origin( 0%, 100% );
 }
 
 .landscape__tree {
@@ -199,6 +220,8 @@ html, body {
     left: 50%;
     margin-left: 140px;
     bottom: 118px;
+    @include transform-style( preserve-3d );
+    @include transform-origin( 0%, 100% );
 }
 
 .landscape__fences {
@@ -206,18 +229,21 @@ html, body {
     width: 100%;
     height: auto;
     bottom: 160px;
+    @include transform-style( preserve-3d );
 }
 
 .landscape__fences--left {
     @include sprite-asset( fence_left );
     position: absolute;
     left: 0;
+    @include transform-origin( 0%, 50% );
 }
 
 .landscape__fences--right {
     @include sprite-asset( fence_right );
     position: absolute;
     right: 0;
+    @include transform-origin( 100%, 50% );
 }
 
 .content {
@@ -277,7 +303,7 @@ html, body {
     color: #d9efff;
 }
 
-.content__separator_vertical {
+.content__separator_horizontal {
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -291,6 +317,7 @@ html, body {
     line-height: 28px;
     position: relative;
     z-index: 1;
+    @include transform-origin( 50%, 50% ); 
 }
 
 .preview_world__button {
@@ -547,12 +574,18 @@ html, body {
     line-height: 70px;
     display: block;
     font-size: 13px;
+    border-bottom: 5px #359cdc solid;
+    height: 70px;
+    background-position-y: 32px;
+    @include transition-property( height, line-height, background-position-y );
+    @include transition-duration( .25s, .25s, .25s );
     &:hover {
         color: #359cdc;
-        border-bottom: 5px #359cdc solid;
+        line-height: 65px;
         height: 65px;
         background: transparent image-url( 'menu_arrow.png' ) no-repeat left top;
-        background-position: 30px 30px;
+        background-position-x: 30px;
+        background-position-y: 27px;
     }
 }
 

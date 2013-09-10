@@ -2,26 +2,34 @@ doctype 5
 html
   head
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
-    meta(name="description", content="Conte dragon")
     meta(name="viewport", content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width")
-    title Tales of Heroes - Awesome iPhone game
+    meta(name="description", content="ModernHero is an iOS Adventure and Role Playing Game. Available on the AppStore. #modernhero")
+    title ModernHero - Awesome iPhone game
+    link(rel="Shortcut Icon", type="image/png", href="img/favicon.png")
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Graduate', type='text/css')
     link(rel='stylesheet', href='./css/reset.css')
     link(rel='stylesheet', href='./css/main.css')
+
+    script(src='./js/vendors/requestAnimationFrame.js')
+    script(src='./js/vendors/jquery-1.10.2.min.js')
+    script(src='./js/vendors/greensock/TweenMax.min.js')
+    script(src='./js/main.min.js')
 body
 
   #main.main
-    .background
-      .background__line--blue_dark
-      .background__line--blue_medium
-      .background__line--blue_light
-      .background__line--yellow
-      .background__line--orange_light
-      .background__line--orange_medium
-      .background__line--red
-      .background__line--green_dark
-      .background__line--green_light
-      .background__line--brown
+    #background.background
+      #background_sky.background__sky
+        .background__line.background__line--blue_dark
+        .background__line.background__line--blue_medium
+        .background__line.background__line--blue_light
+        .background__line.background__line--yellow
+        .background__line.background__line--orange_light
+        .background__line.background__line--orange_medium
+        .background__line.background__line--red
+      #background_ground.background__ground
+        .background__line.background__line--green_dark
+        .background__line.background__line--green_light
+        .background__line.background__line--brown
 
     .landscape
       #clouds.landscape__clouds
@@ -31,29 +39,29 @@ body
         .landscape__cloud.landscape__cloud--cloud3
         .landscape__cloud.landscape__cloud--cloud4 
       #characters.landscape__characters
-        .landscape__character.landscape__character--human
-          .selector.selector--human
-        .landscape__character.landscape__character--dog
+        #character_human.landscape__character.landscape__character--human
+          #selector_human.selector.selector--human
+        #character_dog.landscape__character.landscape__character--dog
       #tree.landscape__tree
       #fences.landscape__fences
-        .landscape__fences--left
-        .landscape__fences--right
+        #fence_left.landscape__fences--left
+        #fence_right.landscape__fences--right
 
     #content.content
       .content__background
       .logo
-        .logo__title
-        .logo__icon
-      .content__separator_big_dots.separator--light
-      .content__description.
-        <h1 class="content__description--title">tales of heroes</h1>
-        is an epic pixel adventure game
-        <br />created by <a class="content__description--link" href="http://www.floz.fr">floz</a> & <a class="content__description--link" href="http://cargocollective.com/filsdegraphiste/">filsdegraphiste</a>
-      .content__separator_vertical.separator--vertical
-      .preview_world
-        .preview_world__banner
+        #logo_title.logo__title
+        #logo_icon.logo__icon
+      #content_separator_dots.content__separator_big_dots.separator--light
+      #content_description.content__description
+        h1#content_description_title.content__description--title modernhero
+        #content_description_subtitle.content__description--subtitle is an epic pixel adventure game
+        #content_description_credits.content__description--credits created by <a class="content__description--link" href="http://www.floz.fr">floz</a> & <a class="content__description--link" href="http://cargocollective.com/filsdegraphiste/">filsdegraphiste</a>
+      #content_separator_horizontal.content__separator_horizontal.separator--horizontal
+      #preview_world_holder.preview_world
+        #preview_world_banner.preview_world__banner
           span VISIT THE WORLD
-        a#preview_world.preview_world__button(href="#")
+        a#preview_world_bt.preview_world__button(href="#")
           span.world_diaporama
             img.world_diaporama__item(src="img/world_diaporama_mountain.jpg", width="155", height="65")
             img.world_diaporama__item(src="img/world_diaporama_desert.jpg", width="155", height="65")
@@ -111,12 +119,6 @@ body
         a#btMenuGallery.menu__link(href='#') GALLERY
       li.menu__item 
         a#btMenuContact.menu__link(href='#') CONTACTS
-
-
-  script(src='./js/vendors/requestAnimationFrame.js')
-  script(src='./js/vendors/greensock/TweenMax.min.js')
-  script(src='./js/vendors/jquery-1.9.1.min.js')
-  script(src='./js/main.min.js')
 
   //- script
   //-   document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
