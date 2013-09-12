@@ -1,5 +1,6 @@
 @import "_mixins/get_sprite.scss";
 @import "compass/css3";
+@import "compass/css3/user-interface";
 
 html, body {
     width: 100%;
@@ -393,13 +394,24 @@ html, body {
     margin-top: -239px;
 }
 
-.gallery_diaporama {
+.gallery_diaporama_cnt {
     position: relative;
+    margin: 0 auto 0;
     width: 319px;
     height: 478px;
     overflow: hidden;
-    margin: 0 auto 0;
-    
+}
+
+.gallery_diaporama {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery_diaporama__item {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .gallery__controller {
@@ -415,6 +427,7 @@ html, body {
 
 .gallery__controller__bt {
     cursor: pointer;
+    @include user-select( none );
 }
 
 .gallery__controller__bt--top {

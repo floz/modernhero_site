@@ -17,14 +17,14 @@ class Landscape
 		@_$fenceLeft = $( "#fence_left" )
 		@_$fenceRight = $( "#fence_right" )
 
-		TweenLite.set @_$human, { autoAlpha: 0, y: 25 }
-		TweenLite.set @_$selector, { autoAlpha: 0, y: -10 }
-		TweenLite.set @_$dog, { autoAlpha: 0, y: 25 }
+		# TweenLite.set @_$human, { autoAlpha: 0, y: 25 }
+		# TweenLite.set @_$selector, { autoAlpha: 0, y: -10 }
+		# TweenLite.set @_$dog, { autoAlpha: 0, y: 25 }
 
-		TweenLite.set @_$tree, { autoAlpha: 0, y: 25 }
+		# TweenLite.set @_$tree, { autoAlpha: 0, y: 25 }
 
-		TweenLite.set @_$fenceLeft, { autoAlpha: 0, y: 15 }
-		TweenLite.set @_$fenceRight, { autoAlpha: 0, y: 15 }
+		# TweenLite.set @_$fenceLeft, { autoAlpha: 0, y: 15 }
+		# TweenLite.set @_$fenceRight, { autoAlpha: 0, y: 15 }
 
 	show: ( delay ) ->
 		@_clouds.show delay

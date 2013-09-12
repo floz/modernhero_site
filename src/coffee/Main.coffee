@@ -17,6 +17,7 @@ class Main
 		$( "#btMenuAbout" ).click @_onAbout
 		$( "#btMenuGallery" ).click @_onGallery
 		$( "#btMenuContact" ).click @_onContact
+		$( "#preview_world_bt").click @_onGallery
 
 		@_background = new Background()
 		@_landscape = new Landscape()

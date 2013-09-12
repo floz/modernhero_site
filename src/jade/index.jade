@@ -62,11 +62,11 @@ body
         #preview_world_banner.preview_world__banner
           span VISIT THE WORLD
         a#preview_world_bt.preview_world__button(href="#")
-          span.world_diaporama
+          span#world_diaporama.world_diaporama
             img.world_diaporama__item(src="img/world_diaporama_mountain.jpg", width="155", height="65")
             img.world_diaporama__item(src="img/world_diaporama_desert.jpg", width="155", height="65")
             img.world_diaporama__item(src="img/world_diaporama_volcan.jpg", width="155", height="65")
-          span.world_layer
+          span#preview_world_layer.world_layer
             span.world_layer__icon
 
   #layer.layer.layer--dark
@@ -74,28 +74,29 @@ body
   #gallery.gallery
     a#bt_close_gallery.bt_close.bt_close--gallery(href="#")
       span.bt_close__icon
-    .gallery__diaporama_holder
-      ul.gallery_diaporama
-        li.gallery_diaporama__item
-          img(src="img/gallery_diaporama_0.jpg", width="319", height="478")
-        li.gallery_diaporama__item
-          img(src="img/gallery_diaporama_1.jpg", width="319", height="478")
-        li.gallery_diaporama__item
-          img(src="img/gallery_diaporama_2.jpg", width="319", height="478")
-        li.gallery_diaporama__item
-          img(src="img/gallery_diaporama_3.jpg", width="319", height="478")
-        li.gallery_diaporama__item
-          img(src="img/gallery_diaporama_4.jpg", width="319", height="478")
-        li.gallery_diaporama__item
-          img(src="img/gallery_diaporama_5.jpg", width="319", height="478")
-        li.gallery_diaporama__item
-          img(src="img/gallery_diaporama_6.jpg", width="319", height="478")
+    #gallery_diaporama_holder.gallery__diaporama_holder
+      #gallery_diaporama_cnt.gallery_diaporama_cnt
+        ul#gallery_diaporama.gallery_diaporama
+          li.gallery_diaporama__item
+            img(src="img/gallery_diaporama_0.jpg", width="319", height="478")
+          li.gallery_diaporama__item
+            img(src="img/gallery_diaporama_1.jpg", width="319", height="478")
+          li.gallery_diaporama__item
+            img(src="img/gallery_diaporama_2.jpg", width="319", height="478")
+          li.gallery_diaporama__item
+            img(src="img/gallery_diaporama_3.jpg", width="319", height="478")
+          li.gallery_diaporama__item
+            img(src="img/gallery_diaporama_4.jpg", width="319", height="478")
+          li.gallery_diaporama__item
+            img(src="img/gallery_diaporama_5.jpg", width="319", height="478")
+          li.gallery_diaporama__item
+            img(src="img/gallery_diaporama_6.jpg", width="319", height="478")
       .gallery__controller
-        .gallery__controller__bt.gallery__controller__bt--top
-        .gallery__controller__pagination.gallery__controller__pagination--current 01
+        #gallery_bt_top.gallery__controller__bt.gallery__controller__bt--top
+        #gallery_pagination.gallery__controller__pagination.gallery__controller__pagination--current 01
         .gallery__controller__separator.separator--gray
-        .gallery__controller__pagination.gallery__controller__pagination--total 06
-        .gallery__controller__bt.gallery__controller__bt--bottom
+        #gallery_pagination_max.gallery__controller__pagination.gallery__controller__pagination--total 06
+        #gallery_bt_bot.gallery__controller__bt.gallery__controller__bt--bottom
 
   #contact.contact
     a#bt_close_contact.bt_close.bt_close--contact(href="#")

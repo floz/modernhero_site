@@ -14,21 +14,22 @@ class Background
 		@_$background_sky = $( "#background_sky" )
 		@_$background_ground = $( "#background_ground" )
 
-		@_$lines = @_$background_sky.find( ".background__line" )
+		# @_$lines = @_$background_sky.find( ".background__line" )
 
-		@_heights = []
-		for line in @_$lines
-			$line = $( line )
-			@_heights.push $line.height()
-			$line.height( 0 )
+		# @_heights = []
+		# for line in @_$lines
+		# 	$line = $( line )
+		# 	@_heights.push $line.height()
+		# 	$line.height( 0 )
 
-		@_$background_ground.css "bottom", "-130px"
-		@_$background_sky.css "bottom", "-300px"
+		# @_$background_ground.css "bottom", "-130px"
+		# @_$background_sky.css "bottom", "-300px"
 
 	show: ( delay ) ->
 		@_showLines( delay )
 
 	_showLines: ( delay ) ->
+		return
 		@_speeds = [ 6, 4, 3, 2.8, 2.7, 2.5, 2.3 ]
 		@_delays = [ 0, 2, 3, 3.5, 4, 4.15, 4.35 ]
 
