@@ -23,7 +23,10 @@ html, body {
 }
 
 .selector {
-    @include sprite-asset( perso_selector );
+    position: relative;
+    background: transparent image-url( "selector_animated.gif" ) no-repeat top left;
+    width: 20px;
+    height: 24px;
 }
 
 .bt_close {
@@ -77,6 +80,9 @@ html, body {
 
 .background {
     overflow: hidden;
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .background__line {
@@ -139,14 +145,18 @@ html, body {
     position: absolute;
     width: 100%;
     height: 100%;
-    @include perspective( 1000 );
-    @include perspective-origin( 50% 50% );
+    // @include translateZ( 0 );
+    // @include perspective( 1000 );
+    // @include backface-visibility( hidden );
 }
 
 .landscape__clouds {
     position: absolute;
     bottom: 560px;
     width: 100%;
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .landscape__cloud {
@@ -187,6 +197,9 @@ html, body {
     position: absolute;
     width: 100%;
     bottom: 279px;
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .landscape__character {
@@ -197,8 +210,25 @@ html, body {
 .landscape__character--human {
     @include sprite-asset( perso );
     margin-left: -200px;
-    @include transform-style( preserve-3d );
-    @include transform-origin( 0%, 100% );
+    &>.eyes {
+        top: 15px;
+        left: 10px;
+    }
+}
+
+.eyes {
+    position: absolute;
+}
+
+.eye--human_right {
+    left: 9px;
+}
+
+.eye {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #000;
 }
 
 .selector--human {
@@ -211,8 +241,10 @@ html, body {
     @include sprite-asset( dog );
     margin-left: -170px;
     top: 106px;
-    @include transform-style( preserve-3d );
-    @include transform-origin( 0%, 100% );
+    &>.eyes {
+        left: 14px;
+        top: 4px;
+    }
 }
 
 .landscape__tree {
@@ -221,8 +253,9 @@ html, body {
     left: 50%;
     margin-left: 140px;
     bottom: 118px;
-    @include transform-style( preserve-3d );
-    @include transform-origin( 0%, 100% );
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .landscape__fences {
@@ -237,14 +270,18 @@ html, body {
     @include sprite-asset( fence_left );
     position: absolute;
     left: 0;
-    @include transform-origin( 0%, 50% );
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .landscape__fences--right {
     @include sprite-asset( fence_right );
     position: absolute;
     right: 0;
-    @include transform-origin( 100%, 50% );
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .content {
@@ -260,6 +297,9 @@ html, body {
     position: relative;
     width: 255px;
     margin: 0 auto;
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .logo__title {
@@ -335,15 +375,16 @@ html, body {
 }
 
 .world_diaporama {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
+    @include translateZ( 0 );
 }
 
 .world_diaporama__item {
     position: absolute;
-    top: 0;
-    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .world_layer {
@@ -382,6 +423,7 @@ html, body {
     height: 100%;
     top: 0;
     left: 0;
+    @include translateZ( 0 );
 }
 
 .gallery__diaporama_holder {
@@ -463,7 +505,8 @@ html, body {
 
 .contact {
     position: absolute;
-    bottom: 70px;
+    bottom: 70px !important;
+    top: auto !important;
     background-color: #fff;
     width: 100%;
     height: 105px;
@@ -490,7 +533,7 @@ html, body {
     position: relative;
     margin: 10px auto 0;
     overflow: hidden;
-    width: 354px;
+    width: 361px;
     height: 36px;
 }
 
@@ -503,6 +546,15 @@ html, body {
 
 .contact__form {
     float: left;
+    width: 205px;
+}
+
+.contact__form_success {
+    float: left;
+    width: 200px;
+    color: #adadad;
+    font-size: 10px;
+    display: none;
 }
 
 .bt_basic {
@@ -525,6 +577,8 @@ html, body {
     padding: 9px;
     float: left;
     cursor: pointer;
+    width: 58px;
+    height: 36px;
 }
 
 .bt_basic--contact {
@@ -551,6 +605,7 @@ html, body {
     margin-top: 2px;
     margin-right: 10px;
     float: left;
+    width: 132px;
 }
 
 .bt_close--contact {
@@ -563,13 +618,17 @@ html, body {
 
 .menu {
     position: absolute;
-    bottom: 0;
+    bottom: 0 !important;
+    top: auto !important;
     width: 100%;
     background-color: #fff;
     overflow: hidden;
     height: 70px;
     text-align: center;
     z-index: 2;
+    @include translateZ( 0 );
+    @include perspective( 1000 );
+    @include backface-visibility( hidden );
 }
 
 .menu__holder {

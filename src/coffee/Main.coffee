@@ -14,7 +14,6 @@ class Main
 	_currentModule: null
 
 	constructor: ->
-		$( "#btMenuAbout" ).click @_onAbout
 		$( "#btMenuGallery" ).click @_onGallery
 		$( "#btMenuContact" ).click @_onContact
 		$( "#preview_world_bt").click @_onGallery
@@ -33,11 +32,6 @@ class Main
 		@_background.show 3
 		@_landscape.show 4.25
 		@_menu.show 4.3
-
-	_onAbout: ( e ) =>
-		e.preventDefault()
-
-		@_hideCurrentModule()
 
 	_onGallery: ( e ) =>
 		return if @_currentModule == @gallery

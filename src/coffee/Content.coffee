@@ -19,26 +19,26 @@ class Content
 		@_$separatorHorizontal = $( "#content_separator_horizontal")
 		@_previewWorld = new PreviewWorld()
 
-		# TweenLite.set @_$logoTitle, { autoAlpha: 0, y: -20 }
-		# TweenLite.set @_$logoIcon, { autoAlpha: 0, y: 20 }
+		TweenLite.set @_$logoTitle, { autoAlpha: 0, y: -20 }
+		TweenLite.set @_$logoIcon, { autoAlpha: 0, y: 20 }
 
-		# @_$logoIcon.css
-		# 	opacity: 0
+		@_$logoIcon.css
+			opacity: 0
 
-		# @_$separatorDots.css
-		# 	opacity: 0
+		@_$separatorDots.css
+			opacity: 0
 
-		# @_$title.css
-		# 	opacity: 0
+		@_$title.css
+			opacity: 0
 
-		# @_$subtitle.css
-		# 	opacity: 0
+		@_$subtitle.css
+			opacity: 0
 
-		# @_$credits.css
-		# 	opacity: 0
+		@_$credits.css
+			opacity: 0
 
-		# @_$separatorHorizontal.css
-		# 	opacity: 0
+		@_$separatorHorizontal.css
+			opacity: 0
 
 	show: ->
 		TweenLite.to @_$separatorDots, 3, { autoAlpha: 1, delay: .2, ease: Quad.easeOut }
@@ -75,13 +75,15 @@ class PreviewWorld
 		@_$bt = $( "#preview_world_bt")
 		@_$previewWorldLayer = $( "#preview_world_layer" )
 
-		# TweenLite.set @_$banner, { autoAlpha: 0, scaleX: .8 }
-		# TweenLite.set @_$bannerTitle, { autoAlpha: 0 }
-		# TweenLite.set @_$bt, { autoAlpha: 0, y: -10 }
+		TweenLite.set @_$banner, { autoAlpha: 0, scaleX: .8 }
+		TweenLite.set @_$bannerTitle, { autoAlpha: 0 }
+		TweenLite.set @_$bt, { autoAlpha: 0, y: -10 }
 
-		@_$diaporamaImgs.css 
-			opacity: 0
-			visibility: "hidden"
+		px = 0
+		for img in @_$diaporamaImgs
+			$( img ).css "left", px + "px"
+			px += 155
+
 
 		TweenLite.set @_$previewWorldLayer, { autoAlpha: 0 }
 		@_$bt.hover @_previewOverHandler, @_previewOutHandler
@@ -99,14 +101,10 @@ class PreviewWorld
 		@_idxImg = 0 if @_idxImg > @_countImg - 1 
 
 		newImg = @_$diaporamaImgs[ @_idxImg ]
-		if @_currentImg
-			$( @_currentImg ).css
-				zIndex: 0
-			$( newImg ).css
-				zIndex: 1
-			TweenLite.to newImg, .4, { autoAlpha: 1, onComplete: @_hideImg, onCompleteParams: [ @_currentImg ] }
-		else
-			TweenLite.set newImg, { autoAlpha: 1 }
+		TweenLite.to @_$diaporamaImgs, .4,
+			css: 
+				x: -@_idxImg * 155
+			ease: Sine.easeOut
 
 		@_currentImg = newImg
 

@@ -40,8 +40,13 @@ body
         .landscape__cloud.landscape__cloud--cloud4 
       #characters.landscape__characters
         #character_human.landscape__character.landscape__character--human
+          .eyes
+            .eye.eye--human_left
+            .eye.eye--human_right
           #selector_human.selector.selector--human
         #character_dog.landscape__character.landscape__character--dog
+          .eyes
+            .eye.eye--dog
       #tree.landscape__tree
       #fences.landscape__fences
         #fence_left.landscape__fences--left
@@ -91,7 +96,7 @@ body
             img(src="img/gallery_diaporama_5.jpg", width="319", height="478")
           li.gallery_diaporama__item
             img(src="img/gallery_diaporama_6.jpg", width="319", height="478")
-      .gallery__controller
+      #gallery_controller.gallery__controller
         #gallery_bt_top.gallery__controller__bt.gallery__controller__bt--top
         #gallery_pagination.gallery__controller__pagination.gallery__controller__pagination--current 01
         .gallery__controller__separator.separator--gray
@@ -108,18 +113,27 @@ body
     .contact__inputs
       a.bt_basic.bt_basic--contact(href="mailto:florian.zumbrunn@gmail.com") Contact us
       .contact__inputs__separator.separator--gray
-      form.contact__form(name="form", action="#", method="post")
+      form#contact_form.contact__form(name="form", action="#", method="post")
         input#input_mail.input.input--mail(type="email", placeholder="Enter your email", name="mail")
         input.bt_basic.bt_basic--form(type="submit", value="SEND")
+      #contact_form_success.contact__form_success THANKS!<br />You will be informed about any news linked to ModernHero. XOXO.
+
 
   #menu.menu
     ul.menu__holder
-      li.menu__item.selected
-        a#btMenuAbout.menu__link(href='#') ABOUT
       li.menu__item 
         a#btMenuGallery.menu__link(href='#') GALLERY
       li.menu__item 
         a#btMenuContact.menu__link(href='#') CONTACTS
+
+  script
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-44006818-1', 'modernhero-thegame.com');
+    ga('send', 'pageview');
 
   //- script
   //-   document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
