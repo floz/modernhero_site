@@ -777,7 +777,7 @@ html, body {
 /* line 547, ../../src/sass/main.scss */
 .contact__form {
   float: left;
-  width: 205px;
+  width: 206px;
 }
 
 /* line 552, ../../src/sass/main.scss */
@@ -896,6 +896,18 @@ html, body {
 }
 
 /* line 643, ../../src/sass/main.scss */
+.menu__icon {
+  background: transparent url('../img/menu_arrow.png?1378156930') no-repeat left top;
+  visibility: hidden;
+  opacity: 0;
+  display: inline-block;
+  width: 6px;
+  height: 9px;
+  position: relative;
+  left: -10px;
+}
+
+/* line 654, ../../src/sass/main.scss */
 .menu__link {
   text-decoration: none;
   color: #93c8f1;
@@ -904,22 +916,23 @@ html, body {
   font-size: 13px;
   border-bottom: 5px #359cdc solid;
   height: 70px;
-  background-position-y: 32px;
-  -webkit-transition-property: height, line-height, background-position-y;
-  -moz-transition-property: height, line-height, background-position-y;
-  -o-transition-property: height, line-height, background-position-y;
-  transition-property: height, line-height, background-position-y;
-  -webkit-transition-duration: 0.25s, 0.25s, 0.25s;
-  -moz-transition-duration: 0.25s, 0.25s, 0.25s;
-  -o-transition-duration: 0.25s, 0.25s, 0.25s;
-  transition-duration: 0.25s, 0.25s, 0.25s;
+  -webkit-transition-property: height, line-height;
+  -moz-transition-property: height, line-height;
+  -o-transition-property: height, line-height;
+  transition-property: height, line-height;
+  -webkit-transition-duration: 0.25s, 0.25s;
+  -moz-transition-duration: 0.25s, 0.25s;
+  -o-transition-duration: 0.25s, 0.25s;
+  transition-duration: 0.25s, 0.25s;
 }
-/* line 654, ../../src/sass/main.scss */
+/* line 664, ../../src/sass/main.scss */
 .menu__link:hover {
   color: #359cdc;
   line-height: 65px;
   height: 65px;
-  background: transparent url('../img/menu_arrow.png?1378156930') no-repeat left top;
-  background-position-x: 30px;
-  background-position-y: 27px;
+}
+/* line 668, ../../src/sass/main.scss */
+.menu__link:hover .menu__icon {
+  opacity: 1;
+  visibility: visible;
 }

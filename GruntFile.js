@@ -10,6 +10,8 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-jade' );
 	grunt.loadNpmTasks( "grunt-contrib-coffee" );
 	grunt.loadNpmTasks( "grunt-contrib-compass" );
+	grunt.loadNpmTasks( "grunt-contrib-uglify" );
+	grunt.loadNpmTasks( "grunt-contrib-cssmin" );
 
 	grunt.registerTask( "default", "watch" );
 
@@ -45,6 +47,7 @@ module.exports = function ( grunt ) {
 			jade: {
 				compile: {
 					options: {
+						pretty: true,
 						data: {
 							debug: true
 						}
@@ -61,7 +64,7 @@ module.exports = function ( grunt ) {
 						bare: true
 					},
 					files: {
-						"./deploy/js/main.min.js" : coffeesToWatch
+						"./deploy/js/main.js" : coffeesToWatch
 					}
 				}
 			},
@@ -70,6 +73,25 @@ module.exports = function ( grunt ) {
 				dist: {
 					options: {
 						config: "./config.rb"
+					}
+				}
+			},
+
+			uglify: {
+				main: {
+					options: { 
+						beautify: false
+					},
+					files: {
+						"./deploy/js/main.min.js": [ "./deploy/js/vendors/requestAnimationFrame.js", "./deploy/js/vendors/jquery-1.10.2.min.js", "./deploy/js/vendors/greensock/TweenMax.min.js", "./deploy/js/main.js" ]
+					}
+				}
+			},
+
+			cssmin: {
+				main: {
+					files: {
+						"./deploy/css/main.min.css": [ "./deploy/css/reset.css", "./deploy/css/main.css" ]
 					}
 				}
 			}

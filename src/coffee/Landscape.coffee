@@ -39,8 +39,6 @@ class Landscape
 
 		TweenLite.to @_$tree, .5, { css: { autoAlpha: 1, y: 0 }, delay: delay + .15, ease: Cubic.easeOut }
 
-		# delay += .35
-
 		TweenLite.to @_$fenceLeft, .5, { css: { autoAlpha: 1, y: 0 }, delay: delay + .145, ease: Cubic.easeOut }
 		TweenLite.to @_$fenceRight, .5, { css: { autoAlpha: 1, y: 0 }, delay: delay + .145, ease: Cubic.easeOut }
 
@@ -52,9 +50,9 @@ class Landscape
 
 	_blinkHuman: =>
 		@_$eyesHuman.hide()
-		TweenLite.delayedCall .5, @_showEyes, [ @_$eyesHuman ]
-		TweenLite.delayedCall 1, @_hideEyes, [ @_$eyesHuman ]
-		TweenLite.delayedCall 1.5, @_showEyes, [ @_$eyesHuman ]
+		TweenLite.delayedCall .25, @_showEyes, [ @_$eyesHuman ]
+		TweenLite.delayedCall .5, @_hideEyes, [ @_$eyesHuman ]
+		TweenLite.delayedCall .75, @_showEyes, [ @_$eyesHuman ]
 
 		setTimeout @_blinkHuman, Math.random() * 6000 + 4000
 
@@ -77,30 +75,58 @@ class Landscape
 class Clouds
 
 	_$clouds: null
-	_$cloudLeft0: null
-	_$cloudLeft1: null
-	_$cloudRight0: null
-	_$cloudRight1: null
-	_$cloudRight2: null
+	_cloudLeft0: null
+	_cloudLeft1: null
+	_cloudRight0: null
+	_cloudRight1: null
+	_cloudRight2: null
 
 	constructor: ->
 		@_$clouds = $( "#clouds" )
 
-		@_$cloudLeft0 = @_$clouds.find ".landscape__cloud--cloud3"
-		@_$cloudLeft1 = @_$clouds.find ".landscape__cloud--cloud2"
-		@_$cloudRight0 = @_$clouds.find ".landscape__cloud--cloud0"
-		@_$cloudRight1 = @_$clouds.find ".landscape__cloud--cloud4"
-		@_$cloudRight2 = @_$clouds.find ".landscape__cloud--cloud1"
-
-		TweenLite.set @_$cloudLeft0, { x: 20, autoAlpha: 0 }
-		TweenLite.set @_$cloudLeft1, { x: 20, autoAlpha: 0 }
-		TweenLite.set @_$cloudRight0, { x: -20, autoAlpha: 0 }
-		TweenLite.set @_$cloudRight1, { x: -20, autoAlpha: 0 }
-		TweenLite.set @_$cloudRight2, { x: -20, autoAlpha: 0 }
+		@_cloudLeft0 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud3" ), 20 )
+		@_cloudLeft1 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud2" ), 20 )
+		@_cloudRight0 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud0" ), -20 )
+		@_cloudRight1 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud4" ), -20 )
+		@_cloudRight2 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud1" ), -20 )
 
 	show: ( delay ) ->
-		TweenLite.to @_$cloudLeft0, .5, { x: 0, autoAlpha: 1, delay: delay }
-		TweenLite.to @_$cloudLeft1, .5, { x: 0, autoAlpha: 1, delay: delay + .1 }
-		TweenLite.to @_$cloudRight0, .5, { x: 0, autoAlpha: 1, delay: delay + .05 }
-		TweenLite.to @_$cloudRight1, .5, { x: 0, autoAlpha: 1, delay: delay + .15 }
-		TweenLite.to @_$cloudRight2, .5, { x: 0, autoAlpha: 1, delay: delay + .075 }
+		@_cloudLeft0.show delay
+		@_cloudLeft1.show delay + .1
+		@_cloudRight0.show delay + .05
+		@_cloudRight1.show delay + .15
+		@_cloudRight2.show delay + .075
+
+class Cloud
+
+	@CLOUDS = []
+
+	$base: null
+
+	_vy: 0
+	_py: 0
+	_ty: 0
+
+	constructor: ( @$base, @px ) ->
+		@_vy = Math.random() * .05 - .025
+		@_vy = Math.min( @_vy, -.015 ) if @_vy < 0
+		@_vy = Math.max( @_vy, .015 ) if @_vy > 0
+		@_py = @_vy
+		TweenLite.set @$base, { css: { x: @px, autoAlpha: 0 } }
+		Cloud.CLOUDS.push @
+
+	show: ( delay ) ->
+		TweenLite.to @$base, .5, { css: { x: 0, autoAlpha: 1 }, delay: delay }
+		setTimeout @_move, Math.random() * 1000
+		return
+	
+	_move: =>
+		@_py += @_vy
+		@_ty = ( Math.sin( @_py ) * 10 - @_ty ) * .9
+		TweenLite.set @$base, { css: { y: @_ty } }
+		requestAnimationFrame @_move
+
+
+
+
+

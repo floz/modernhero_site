@@ -546,7 +546,7 @@ html, body {
 
 .contact__form {
     float: left;
-    width: 205px;
+    width: 206px;
 }
 
 .contact__form_success {
@@ -640,6 +640,17 @@ html, body {
     width: 170px;
 }
 
+.menu__icon {
+    background: transparent image-url( 'menu_arrow.png' ) no-repeat left top;
+    visibility: hidden;
+    opacity: 0;
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    position: relative;
+    left: -10px;
+}
+
 .menu__link {
     text-decoration: none;
     color: #93c8f1;
@@ -648,16 +659,16 @@ html, body {
     font-size: 13px;
     border-bottom: 5px #359cdc solid;
     height: 70px;
-    background-position-y: 32px;
-    @include transition-property( height, line-height, background-position-y );
-    @include transition-duration( .25s, .25s, .25s );
+    @include transition-property( height, line-height );
+    @include transition-duration( .25s, .25s );
     &:hover {
         color: #359cdc;
         line-height: 65px;
         height: 65px;
-        background: transparent image-url( 'menu_arrow.png' ) no-repeat left top;
-        background-position-x: 30px;
-        background-position-y: 27px;
+        .menu__icon {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }
 

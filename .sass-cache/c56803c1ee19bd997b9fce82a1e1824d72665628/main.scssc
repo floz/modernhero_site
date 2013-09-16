@@ -1,7 +1,7 @@
 3.2.9 (Media Mark)
-58216c66a557deae34bd0b72ac63cb7f85e83fcb
+43382bb1c882e1efa27dd997392ceb85945e0a34
 o:Sass::Tree::RootNode
-:@template"h-@import "_mixins/get_sprite.scss";
+:@template"”-@import "_mixins/get_sprite.scss";
 @import "compass/css3";
 @import "compass/css3/user-interface";
 
@@ -549,7 +549,7 @@ html, body {
 
 .contact__form {
     float: left;
-    width: 205px;
+    width: 206px;
 }
 
 .contact__form_success {
@@ -643,6 +643,17 @@ html, body {
     width: 170px;
 }
 
+.menu__icon {
+    background: transparent image-url( 'menu_arrow.png' ) no-repeat left top;
+    visibility: hidden;
+    opacity: 0;
+    display: inline-block;
+    width: 6px;
+    height: 9px;
+    position: relative;
+    left: -10px;
+}
+
 .menu__link {
     text-decoration: none;
     color: #93c8f1;
@@ -651,21 +662,21 @@ html, body {
     font-size: 13px;
     border-bottom: 5px #359cdc solid;
     height: 70px;
-    background-position-y: 32px;
-    @include transition-property( height, line-height, background-position-y );
-    @include transition-duration( .25s, .25s, .25s );
+    @include transition-property( height, line-height );
+    @include transition-duration( .25s, .25s );
     &:hover {
         color: #359cdc;
         line-height: 65px;
         height: 65px;
-        background: transparent image-url( 'menu_arrow.png' ) no-repeat left top;
-        background-position-x: 30px;
-        background-position-y: 27px;
+        .menu__icon {
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }
 
 :
-@linei:@options{ :@has_childrenT:@children[do:Sass::Tree::ImportNode;0;i;@:@imported_file0;
+@linei:@options{ :@has_childrenT:@children[eo:Sass::Tree::ImportNode;0;i;@:@imported_file0;
 [ :@imported_filename"_mixins/get_sprite.scsso;;0;i;@;0;
 [ ;"compass/css3o;;0;i;@;0;
 [ ;" compass/css3/user-interfaceo:Sass::Tree::RuleNode:
@@ -1275,7 +1286,7 @@ float;;;
 [ ; i ;!o;";@;#;$;!"	lefto;;i%;@;["
 width;;;
 [ ; i ;!o;";@;#;$;!"
-205px; i o;;[".contact__form_success;i(;@;o;;" ;i(;[o;;[o;
+206px; i o;;[".contact__form_success;i(;@;o;;" ;i(;[o;;[o;
 ;@ı;i(;[o;%;@ı;i(;["contact__form_success;o;;{ ;0;	T;
 [
 o;;i);@;["
@@ -1386,33 +1397,44 @@ float;;;
 [ ; i ;!o;";@;#;$;!"	lefto;;iÄ;@;["
 width;;;
 [ ; i ;!o;";@;#;$;!"
-170px; i o;;[".menu__link;iÉ;@;o;;" ;iÉ;[o;;[o;
-;@;iÉ;[o;%;@;iÉ;["menu__link;o;;{ ;0;	T;
-[o;;iÑ;@;["text-decoration;;;
-[ ; i ;!o;";@;#;$;!"	noneo;;iÖ;@;["
-color;;;
-[ ; i ;!o;";@;#;$;!"#93c8f1o;;iÜ;@;["line-height;;;
-[ ; i ;!o;";@;#;$;!"	70pxo;;iá;@;["display;;;
+170px; i o;;[".menu__icon;iÉ;@;o;;" ;iÉ;[o;;[o;
+;@;iÉ;[o;%;@;iÉ;["menu__icon;o;;{ ;0;	T;
+[o;;iÑ;@;["background;;;
+[ ; i ;!o;*	;iÑ;@;+;,;![
+o;"	;iÑ;@;#;$;!"transparento;-;'{ ;iÑ;@;"image-url;(0;)[o;"	;iÑ;@;#;.;!"menu_arrow.pngo;"	;iÑ;@;#;$;!"no-repeato;"	;iÑ;@;#;$;!"	lefto;"	;iÑ;@;#;$;!"topo;;iÖ;@;["visibility;;;
+[ ; i ;!o;";@;#;$;!"hiddeno;;iÜ;@;["opacity;;;
+[ ; i ;!o;";@;#;$;!"0o;;iá;@;["display;;;
+[ ; i ;!o;";@;#;$;!"inline-blocko;;ià;@;["
+width;;;
+[ ; i ;!o;";@;#;$;!"6pxo;;iâ;@;["height;;;
+[ ; i ;!o;";@;#;$;!"9pxo;;iä;@;["position;;;
+[ ; i ;!o;";@;#;$;!"relativeo;;iã;@;["	left;;;
 [ ; i ;!o;";@;#;$;!"
-blocko;;ià;@;["font-size;;;
-[ ; i ;!o;";@;#;$;!"	13pxo;;iâ;@;["border-bottom;;;
-[ ; i ;!o;";@;#;$;!"5px #359cdc solido;;iä;@;["height;;;
-[ ; i ;!o;";@;#;$;!"	70pxo;;iã;@;["background-position-y;;;
-[ ; i ;!o;";@;#;$;!"	32pxo;&;'{ ;iå;@;"transition-property;
-[ ;(0;)[o;"	;iå;@;#;$;!"heighto;"	;iå;@;#;$;!"line-heighto;"	;iå;@;#;$;!"background-position-yo;&;'{ ;iç;@;"transition-duration;
-[ ;(0;)[o;6;7["s;iç;@;8"
-0.25s;9[ ;!f	0.25o;6;7["s;iç;@;8"
-0.25s;9[ ;!f	0.25o;6;7["s;iç;@;8"
-0.25s;9[ ;!f	0.25o;;["&:hover;ié;@;o;;" ;ié;[o;;[o;
-;@x;ié;[o;/;@x;iéo;0
-;@x;ié;10;["
-hover;#;2;o;;{ ;0;	T;
-[o;;iè;@;["
+-10px; i o;;[".menu__link;ié;@;o;;" ;ié;[o;;[o;
+;@d;ié;[o;%;@d;ié;["menu__link;o;;{ ;0;	T;
+[o;;iè;@;["text-decoration;;;
+[ ; i ;!o;";@;#;$;!"	noneo;;iê;@;["
 color;;;
-[ ; i ;!o;";@;#;$;!"#359cdco;;iê;@;["line-height;;;
-[ ; i ;!o;";@;#;$;!"	65pxo;;ië;@;["height;;;
-[ ; i ;!o;";@;#;$;!"	65pxo;;ií;@;["background;;;
-[ ; i ;!o;*	;ií;@;+;,;![
-o;"	;ií;@;#;$;!"transparento;-;'{ ;ií;@;"image-url;(0;)[o;"	;ií;@;#;.;!"menu_arrow.pngo;"	;ií;@;#;$;!"no-repeato;"	;ií;@;#;$;!"	lefto;"	;ií;@;#;$;!"topo;;iì;@;["background-position-x;;;
-[ ; i ;!o;";@;#;$;!"	30pxo;;iî;@;["background-position-y;;;
-[ ; i ;!o;";@;#;$;!"	27px; i ; i 
+[ ; i ;!o;";@;#;$;!"#93c8f1o;;ië;@;["line-height;;;
+[ ; i ;!o;";@;#;$;!"	70pxo;;ií;@;["display;;;
+[ ; i ;!o;";@;#;$;!"
+blocko;;iì;@;["font-size;;;
+[ ; i ;!o;";@;#;$;!"	13pxo;;iî;@;["border-bottom;;;
+[ ; i ;!o;";@;#;$;!"5px #359cdc solido;;iï;@;["height;;;
+[ ; i ;!o;";@;#;$;!"	70pxo;&;'{ ;iñ;@;"transition-property;
+[ ;(0;)[o;"	;iñ;@;#;$;!"heighto;"	;iñ;@;#;$;!"line-heighto;&;'{ ;ió;@;"transition-duration;
+[ ;(0;)[o;6;7["s;ió;@;8"
+0.25s;9[ ;!f	0.25o;6;7["s;ió;@;8"
+0.25s;9[ ;!f	0.25o;;["&:hover;iò;@;o;;" ;iò;[o;;[o;
+;@∏;iò;[o;/;@∏;iòo;0
+;@∏;iò;10;["
+hover;#;2;o;;{ ;0;	T;
+[	o;;iô;@;["
+color;;;
+[ ; i ;!o;";@;#;$;!"#359cdco;;iö;@;["line-height;;;
+[ ; i ;!o;";@;#;$;!"	65pxo;;iõ;@;["height;;;
+[ ; i ;!o;";@;#;$;!"	65pxo;;[".menu__icon;iú;@;o;;" ;iú;[o;;[o;
+;@€;iú;[o;%;@€;iú;["menu__icon;o;;{ ;0;	T;
+[o;;iù;@;["opacity;;;
+[ ; i ;!o;";@;#;$;!"1o;;iû;@;["visibility;;;
+[ ; i ;!o;";@;#;$;!"visible; i ; i ; i 
