@@ -31,7 +31,7 @@ html, body {
 /* line 25, ../../src/sass/main.scss */
 .selector {
   position: relative;
-  background: transparent url('../img/selector_animated.gif?1379043423') no-repeat top left;
+  background: transparent url('../img/selector_animated.gif?1379426609') no-repeat top left;
   width: 20px;
   height: 24px;
 }
@@ -897,7 +897,7 @@ html, body {
 
 /* line 643, ../../src/sass/main.scss */
 .menu__icon {
-  background: transparent url('../img/menu_arrow.png?1378156930') no-repeat left top;
+  background: transparent url('../img/menu_arrow.png?1378408260') no-repeat left top;
   visibility: hidden;
   opacity: 0;
   display: inline-block;
