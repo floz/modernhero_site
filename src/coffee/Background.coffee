@@ -27,6 +27,7 @@ class Background
 
 	show: ( delay ) ->
 		@_showLines( delay )
+		return
 
 	_showLines: ( delay ) ->
 		@_speeds = [ 6, 4, 3, 2.8, 2.7, 2.5, 2.3 ]
@@ -42,5 +43,7 @@ class Background
 
 		TweenLite.to @_$background_sky, 5.5 * ratio, { bottom: 0, delay: delay }
 		TweenLite.to @_$background_ground, 4 * ratio, { bottom: 0, delay: 3 * ratio + delay, ease: Quad.easeOut }
+
+		return
 
 

@@ -32,6 +32,7 @@ class Main
 		@_background.show 3
 		@_landscape.show 4.25
 		@_menu.show 4.3
+		return
 
 	_onGallery: ( e ) =>
 		return if @_currentModule == @gallery
@@ -41,6 +42,7 @@ class Main
 		@_hideCurrentModule()
 		@_gallery.show()
 		@_currentModule = @_gallery
+		return
 
 	_onContact: ( e ) =>
 		return if @_currentModule == @_contact && @_currentModule._opened
@@ -50,7 +52,9 @@ class Main
 		@_hideCurrentModule()
 		@_contact.show()
 		@_currentModule = @_contact
+		return
 
 	_hideCurrentModule: ->
 		return if !@_currentModule
 		@_currentModule.hide()
+		return

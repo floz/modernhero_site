@@ -41,15 +41,18 @@ class Gallery
 		@_idx--
 		@_idx = 0 if @_idx < 0 
 		@_update()
+		return
 
 	_botClickHandler: =>
 		@_idx++
 		@_idx = @_idxMax - 1 if @_idx >= @_idxMax - 1
 		@_update()
+		return
 
 	_update: ->
 		@_$pagination.html "0" + ( @_idx + 1 )
 		TweenLite.to @_$diaporama, .5, { y: -@_idx * 478 }
+		return
 
 	show: ->
 		return if @_opened
@@ -105,10 +108,12 @@ class Gallery
 			easeParams: [ 1.2 ]
 
 		@_$btClose.click @_closeClickHandler
+		return
 
 	_closeClickHandler: ( e ) =>
 		e.preventDefault()
 		@hide()
+		return
 
 	hide: ->
 		return if !@_opened
@@ -136,8 +141,10 @@ class Gallery
 			onComplete: @_onHideComplete
 
 		@_opened = false
+		return
 
 	_onHideComplete: =>
 		@_$base.hide()
 		@_$layer.hide()
+		return
 		

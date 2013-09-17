@@ -17,3 +17,5 @@ class Menu
 		for link in @_$links
 			TweenLite.to link, .6, { css: { autoAlpha: 1, y: 0 }, delay: delay + .1 + d, ease: Quad.easeOut }
 			d += .075
+
+		return

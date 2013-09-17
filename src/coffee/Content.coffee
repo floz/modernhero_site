@@ -53,6 +53,8 @@ class Content
 
 		@_previewWorld.show 4.5
 
+		return
+
 class PreviewWorld
 
 	_$banner: null
@@ -92,9 +94,11 @@ class PreviewWorld
 
 	_previewOverHandler: ( e ) =>
 		TweenLite.to @_$previewWorldLayer, .4, { autoAlpha: 1, ease: Cubic.easeOut }
+		return
 
 	_previewOutHandler: ( e ) =>
 		TweenLite.to @_$previewWorldLayer, .2, { autoAlpha: 0, ease: Cubic.easeIn }
+		return
 
 	_next: =>
 		@_idxImg++
@@ -110,10 +114,14 @@ class PreviewWorld
 
 		setTimeout @_next, 4000
 
+		return
+
 	_hideImg: ( img ) ->
 		TweenLite.set img, { autoAlpha: 0 }
+		return
 
 	show: ( delay ) ->
 		TweenLite.to @_$banner, .4, { autoAlpha: 1, scaleX: 1, delay: delay, ease: Back.easeOut }
 		TweenLite.to @_$bannerTitle, .25, { autoAlpha: 1, delay: delay + .3 }
 		TweenLite.to @_$bt, .4, { autoAlpha: 1, y: 0, delay: delay + .2 }
+		return

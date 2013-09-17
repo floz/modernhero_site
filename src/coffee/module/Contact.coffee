@@ -27,9 +27,12 @@ class Contact
 			dataType: "json",
 			success: @_onSuccess
 
+		return
+
 	_onSuccess: =>
 		@_$form.hide()
 		@_$success.show()
+		return
 
 	show: ->
 		return if @_opened
@@ -41,10 +44,12 @@ class Contact
 		TweenLite.to @_$main, .7, { css: { bottom: "105px" }, delay: .05, ease: Cubic.easeOut }
 		
 		@_$btClose.click @_closeClickHandler
+		return
 
 	_closeClickHandler: ( e ) =>
 		e.preventDefault()
 		@hide()
+		return
 
 	hide: ->
 		return if !@_opened
@@ -54,7 +59,9 @@ class Contact
 
 		TweenLite.to @_$base, .3, { css: { autoAlpha: 0, y: 100 }, delay: .025, ease: Cubic.easeOut, onComplete: @_onHideComplete }
 		TweenLite.to @_$main, .4, { css: { bottom: "0" }, ease: Cubic.easeOut }
+		return
 
 	_onHideComplete: =>
 		TweenLite.set @_$base, { autoAlpha: 0 }
 		@_$base.css "display", "none"
+		return

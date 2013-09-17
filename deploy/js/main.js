@@ -33,7 +33,7 @@ Contact = (function() {
     var $email;
     e.preventDefault();
     $email = this._$form.find("input[type='email']");
-    return $.ajax({
+    $.ajax({
       type: "POST",
       url: "./save.php",
       data: {
@@ -46,7 +46,7 @@ Contact = (function() {
 
   Contact.prototype._onSuccess = function() {
     this._$form.hide();
-    return this._$success.show();
+    this._$success.show();
   };
 
   Contact.prototype.show = function() {
@@ -72,12 +72,12 @@ Contact = (function() {
       delay: .05,
       ease: Cubic.easeOut
     });
-    return this._$btClose.click(this._closeClickHandler);
+    this._$btClose.click(this._closeClickHandler);
   };
 
   Contact.prototype._closeClickHandler = function(e) {
     e.preventDefault();
-    return this.hide();
+    this.hide();
   };
 
   Contact.prototype.hide = function() {
@@ -95,7 +95,7 @@ Contact = (function() {
       ease: Cubic.easeOut,
       onComplete: this._onHideComplete
     });
-    return TweenLite.to(this._$main, .4, {
+    TweenLite.to(this._$main, .4, {
       css: {
         bottom: "0"
       },
@@ -107,7 +107,7 @@ Contact = (function() {
     TweenLite.set(this._$base, {
       autoAlpha: 0
     });
-    return this._$base.css("display", "none");
+    this._$base.css("display", "none");
   };
 
   return Contact;
@@ -176,7 +176,7 @@ Gallery = (function() {
     if (this._idx < 0) {
       this._idx = 0;
     }
-    return this._update();
+    this._update();
   };
 
   Gallery.prototype._botClickHandler = function() {
@@ -184,12 +184,12 @@ Gallery = (function() {
     if (this._idx >= this._idxMax - 1) {
       this._idx = this._idxMax - 1;
     }
-    return this._update();
+    this._update();
   };
 
   Gallery.prototype._update = function() {
     this._$pagination.html("0" + (this._idx + 1));
-    return TweenLite.to(this._$diaporama, .5, {
+    TweenLite.to(this._$diaporama, .5, {
       y: -this._idx * 478
     });
   };
@@ -276,12 +276,12 @@ Gallery = (function() {
       ease: Back.easeOut,
       easeParams: [1.2]
     });
-    return this._$btClose.click(this._closeClickHandler);
+    this._$btClose.click(this._closeClickHandler);
   };
 
   Gallery.prototype._closeClickHandler = function(e) {
     e.preventDefault();
-    return this.hide();
+    this.hide();
   };
 
   Gallery.prototype.hide = function() {
@@ -317,12 +317,12 @@ Gallery = (function() {
       ease: Quad.easeOut,
       onComplete: this._onHideComplete
     });
-    return this._opened = false;
+    this._opened = false;
   };
 
   Gallery.prototype._onHideComplete = function() {
     this._$base.hide();
-    return this._$layer.hide();
+    this._$layer.hide();
   };
 
   return Gallery;
@@ -365,7 +365,7 @@ Background = (function() {
   }
 
   Background.prototype.show = function(delay) {
-    return this._showLines(delay);
+    this._showLines(delay);
   };
 
   Background.prototype._showLines = function(delay) {
@@ -389,7 +389,7 @@ Background = (function() {
       bottom: 0,
       delay: delay
     });
-    return TweenLite.to(this._$background_ground, 4 * ratio, {
+    TweenLite.to(this._$background_ground, 4 * ratio, {
       bottom: 0,
       delay: 3 * ratio + delay,
       ease: Quad.easeOut
@@ -492,7 +492,7 @@ Content = (function() {
       y: 0,
       delay: 4.15
     });
-    return this._previewWorld.show(4.5);
+    this._previewWorld.show(4.5);
   };
 
   return Content;
@@ -556,14 +556,14 @@ PreviewWorld = (function() {
   }
 
   PreviewWorld.prototype._previewOverHandler = function(e) {
-    return TweenLite.to(this._$previewWorldLayer, .4, {
+    TweenLite.to(this._$previewWorldLayer, .4, {
       autoAlpha: 1,
       ease: Cubic.easeOut
     });
   };
 
   PreviewWorld.prototype._previewOutHandler = function(e) {
-    return TweenLite.to(this._$previewWorldLayer, .2, {
+    TweenLite.to(this._$previewWorldLayer, .2, {
       autoAlpha: 0,
       ease: Cubic.easeIn
     });
@@ -583,11 +583,11 @@ PreviewWorld = (function() {
       ease: Sine.easeOut
     });
     this._currentImg = newImg;
-    return setTimeout(this._next, 4000);
+    setTimeout(this._next, 4000);
   };
 
   PreviewWorld.prototype._hideImg = function(img) {
-    return TweenLite.set(img, {
+    TweenLite.set(img, {
       autoAlpha: 0
     });
   };
@@ -603,7 +603,7 @@ PreviewWorld = (function() {
       autoAlpha: 1,
       delay: delay + .3
     });
-    return TweenLite.to(this._$bt, .4, {
+    TweenLite.to(this._$bt, .4, {
       autoAlpha: 1,
       y: 0,
       delay: delay + .2
@@ -727,12 +727,12 @@ Landscape = (function() {
       delay: delay + .145,
       ease: Cubic.easeOut
     });
-    return delay += .1;
+    delay += .1;
   };
 
   Landscape.prototype._startBlinking = function() {
     this._blinkHuman();
-    return TweenLite.delayedCall(.5, this._blinkDog);
+    TweenLite.delayedCall(.5, this._blinkDog);
   };
 
   Landscape.prototype._blinkHuman = function() {
@@ -740,15 +740,15 @@ Landscape = (function() {
     TweenLite.delayedCall(.25, this._showEyes, [this._$eyesHuman]);
     TweenLite.delayedCall(.5, this._hideEyes, [this._$eyesHuman]);
     TweenLite.delayedCall(.75, this._showEyes, [this._$eyesHuman]);
-    return setTimeout(this._blinkHuman, Math.random() * 6000 + 4000);
+    setTimeout(this._blinkHuman, Math.random() * 6000 + 4000);
   };
 
   Landscape.prototype._showEyes = function(eyes) {
-    return eyes.show();
+    eyes.show();
   };
 
   Landscape.prototype._hideEyes = function(eyes) {
-    return eyes.hide();
+    eyes.hide();
   };
 
   Landscape.prototype._blinkDog = function() {
@@ -756,7 +756,7 @@ Landscape = (function() {
     TweenLite.delayedCall(.25, this._showEyes, [this._$eyesDog]);
     TweenLite.delayedCall(.5, this._hideEyes, [this._$eyesDog]);
     TweenLite.delayedCall(.75, this._showEyes, [this._$eyesDog]);
-    return setTimeout(this._blinkDog, Math.random() * 4000 + 2000);
+    setTimeout(this._blinkDog, Math.random() * 4000 + 2000);
   };
 
   return Landscape;
@@ -783,6 +783,7 @@ Clouds = (function() {
     this._cloudRight0 = new Cloud(this._$clouds.find(".landscape__cloud--cloud0"), -20);
     this._cloudRight1 = new Cloud(this._$clouds.find(".landscape__cloud--cloud4"), -20);
     this._cloudRight2 = new Cloud(this._$clouds.find(".landscape__cloud--cloud1"), -20);
+    return;
   }
 
   Clouds.prototype.show = function(delay) {
@@ -790,7 +791,7 @@ Clouds = (function() {
     this._cloudLeft1.show(delay + .1);
     this._cloudRight0.show(delay + .05);
     this._cloudRight1.show(delay + .15);
-    return this._cloudRight2.show(delay + .075);
+    this._cloudRight2.show(delay + .075);
   };
 
   return Clouds;
@@ -827,6 +828,7 @@ Cloud = (function() {
       }
     });
     Cloud.CLOUDS.push(this);
+    return;
   }
 
   Cloud.prototype.show = function(delay) {
@@ -848,7 +850,7 @@ Cloud = (function() {
         y: this._ty
       }
     });
-    return requestAnimationFrame(this._move);
+    requestAnimationFrame(this._move);
   };
 
   return Cloud;
@@ -897,7 +899,7 @@ Main = (function() {
     this._content.show();
     this._background.show(3);
     this._landscape.show(4.25);
-    return this._menu.show(4.3);
+    this._menu.show(4.3);
   };
 
   Main.prototype._onGallery = function(e) {
@@ -907,7 +909,7 @@ Main = (function() {
     e.preventDefault();
     this._hideCurrentModule();
     this._gallery.show();
-    return this._currentModule = this._gallery;
+    this._currentModule = this._gallery;
   };
 
   Main.prototype._onContact = function(e) {
@@ -917,14 +919,14 @@ Main = (function() {
     e.preventDefault();
     this._hideCurrentModule();
     this._contact.show();
-    return this._currentModule = this._contact;
+    this._currentModule = this._contact;
   };
 
   Main.prototype._hideCurrentModule = function() {
     if (!this._currentModule) {
       return;
     }
-    return this._currentModule.hide();
+    this._currentModule.hide();
   };
 
   return Main;
@@ -961,7 +963,7 @@ Menu = (function() {
   }
 
   Menu.prototype.show = function(delay) {
-    var d, link, _i, _len, _ref, _results;
+    var d, link, _i, _len, _ref;
     TweenLite.to(this._$menu, .6, {
       css: {
         autoAlpha: 1,
@@ -972,7 +974,6 @@ Menu = (function() {
     });
     d = 0;
     _ref = this._$links;
-    _results = [];
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       link = _ref[_i];
       TweenLite.to(link, .6, {
@@ -983,9 +984,8 @@ Menu = (function() {
         delay: delay + .1 + d,
         ease: Quad.easeOut
       });
-      _results.push(d += .075);
+      d += .075;
     }
-    return _results;
   };
 
   return Menu;

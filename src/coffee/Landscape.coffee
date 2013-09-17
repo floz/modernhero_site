@@ -43,10 +43,12 @@ class Landscape
 		TweenLite.to @_$fenceRight, .5, { css: { autoAlpha: 1, y: 0 }, delay: delay + .145, ease: Cubic.easeOut }
 
 		delay += .1
+		return
 
 	_startBlinking: =>
 		@_blinkHuman();
 		TweenLite.delayedCall .5, @_blinkDog;
+		return
 
 	_blinkHuman: =>
 		@_$eyesHuman.hide()
@@ -55,12 +57,15 @@ class Landscape
 		TweenLite.delayedCall .75, @_showEyes, [ @_$eyesHuman ]
 
 		setTimeout @_blinkHuman, Math.random() * 6000 + 4000
+		return
 
 	_showEyes: ( eyes ) =>
 		eyes.show()
+		return
 
 	_hideEyes: ( eyes ) ->
 		eyes.hide()
+		return
 
 	_blinkDog: =>
 		@_$eyesDog.hide()
@@ -69,6 +74,7 @@ class Landscape
 		TweenLite.delayedCall .75, @_showEyes, [ @_$eyesDog ]
 
 		setTimeout @_blinkDog, Math.random() * 4000 + 2000
+		return
 
 
 
@@ -89,6 +95,7 @@ class Clouds
 		@_cloudRight0 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud0" ), -20 )
 		@_cloudRight1 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud4" ), -20 )
 		@_cloudRight2 = new Cloud( @_$clouds.find( ".landscape__cloud--cloud1" ), -20 )
+		return
 
 	show: ( delay ) ->
 		@_cloudLeft0.show delay
@@ -96,6 +103,7 @@ class Clouds
 		@_cloudRight0.show delay + .05
 		@_cloudRight1.show delay + .15
 		@_cloudRight2.show delay + .075
+		return
 
 class Cloud
 
@@ -114,6 +122,7 @@ class Cloud
 		@_py = @_vy
 		TweenLite.set @$base, { css: { x: @px, autoAlpha: 0 } }
 		Cloud.CLOUDS.push @
+		return
 
 	show: ( delay ) ->
 		TweenLite.to @$base, .5, { css: { x: 0, autoAlpha: 1 }, delay: delay }
@@ -125,6 +134,7 @@ class Cloud
 		@_ty = ( Math.sin( @_py ) * 10 - @_ty ) * .9
 		TweenLite.set @$base, { css: { y: @_ty } }
 		requestAnimationFrame @_move
+		return
 
 
 
