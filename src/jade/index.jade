@@ -3,7 +3,13 @@ html
   head
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     meta(name="viewport", content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width")
-    meta(name="description", content="ModernHero is an iOS Adventure and Role Playing Game. Available on the AppStore. #modernhero")
+    meta(name="description", content="ModernHero is an amazing iOS mobile game. It's an adventure game, with a bunch of RPG pixels! Available on the AppStore.")
+    meta(property="og:title", content="ModernHero")
+    meta(property="og:type", content="game")
+    meta(property="og:url", content="http://modernhero-thegame.com/")
+    meta(property="og:image", content="http://modernhero-thegame.com/img/facebook.jpg")
+    meta(property="og:site_name", content="ModernHero")
+    meta(property="og:description", content="Discover ModernHero, an amazing iOS mobile game! Play and live a great adventure.")
     title ModernHero - Awesome iPhone game
     link(rel="Shortcut Icon", type="image/png", href="img/favicon.png")
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Graduate', type='text/css')
@@ -119,6 +125,14 @@ body
         input#input_mail.input.input--mail(type="email", placeholder="Enter your email", name="mail")
         input.bt_basic.bt_basic--form(type="submit", value="SEND")
       #contact_form_success.contact__form_success THANKS!<br />You will be informed about any news linked to ModernHero. XOXO.
+
+  #share.share
+    a#bt_share--facebook.bt_share.bt_share--facebook(href="#")
+      .bt_share__icon
+      .bt_share__cursor
+    a#bt_share--twitter.bt_share.bt_share--twitter(href="#")
+      .bt_share__icon
+      .bt_share__cursor
 
 
   #menu.menu

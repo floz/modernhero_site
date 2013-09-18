@@ -875,6 +875,8 @@ Main = (function() {
 
   Main.prototype._menu = null;
 
+  Main.prototype._$share = null;
+
   Main.prototype._gallery = null;
 
   Main.prototype._contact = null;
@@ -882,15 +884,26 @@ Main = (function() {
   Main.prototype._currentModule = null;
 
   function Main() {
+    this._onTwitterClick = __bind(this._onTwitterClick, this);
+    this._onFacebookClick = __bind(this._onFacebookClick, this);
     this._onContact = __bind(this._onContact, this);
     this._onGallery = __bind(this._onGallery, this);
     $("#btMenuGallery").click(this._onGallery);
     $("#btMenuContact").click(this._onContact);
     $("#preview_world_bt").click(this._onGallery);
+    $("#bt_share--facebook").click(this._onFacebookClick);
+    $("#bt_share--twitter").click(this._onTwitterClick);
     this._background = new Background();
     this._landscape = new Landscape();
     this._content = new Content();
     this._menu = new Menu();
+    this._$share = $("#share");
+    TweenLite.set(this._$share, {
+      css: {
+        autoAlpha: 0,
+        y: -50
+      }
+    });
     this._gallery = new Gallery();
     this._contact = new Contact();
   }
@@ -900,6 +913,22 @@ Main = (function() {
     this._background.show(3);
     this._landscape.show(4.25);
     this._menu.show(4.3);
+    TweenLite.to(this._$share, .2, {
+      delay: 4.4,
+      css: {
+        autoAlpha: .8,
+        y: -20
+      },
+      ease: Sine.easeIn
+    });
+    TweenLite.to(this._$share, .4, {
+      delay: 4.6,
+      css: {
+        autoAlpha: 1,
+        y: 0
+      },
+      ease: Cubic.easeOut
+    });
   };
 
   Main.prototype._onGallery = function(e) {
@@ -920,6 +949,18 @@ Main = (function() {
     this._hideCurrentModule();
     this._contact.show();
     this._currentModule = this._contact;
+  };
+
+  Main.prototype._onFacebookClick = function(e) {
+    window.open("http://www.facebook.com/sharer.php?u=" + encodeURIComponent(location.href) + "&t=" + encodeURIComponent(document.title), "Share us on facebook", "toolbar=0,status=0,width=548,height=325");
+    return false;
+  };
+
+  Main.prototype._onTwitterClick = function(e) {
+    var description;
+    description = "Discover ModernHero, an amazing iOS mobile game!";
+    window.open("https://twitter.com/home?status=" + encodeURIComponent(description) + " - " + encodeURIComponent(location.href) + " - " + encodeURIComponent("@modernhero_game"), "Share us on twitter", "toolbar=0,status=0,width=548,height=325");
+    return false;
   };
 
   Main.prototype._hideCurrentModule = function() {

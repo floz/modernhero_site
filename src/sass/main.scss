@@ -306,6 +306,7 @@ html, body {
     @include sprite-asset( logo );
     position: relative;
     left: 5px;
+    top: 20px;
 }
 
 .logo__icon {
@@ -614,6 +615,56 @@ html, body {
     margin: 0;
     margin-left: -36px;
     left: 50%;
+}
+
+.share {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    @include sprite-asset( share_bg );
+}
+
+.bt_share {
+    position: relative;
+    display: block;
+    width: 72px;
+    height: 40px;
+    left: 15px;
+    top: 35px;
+}
+
+.bt_share:hover .bt_share__cursor {
+    display: block;
+}
+
+.bt_share--facebook .bt_share__icon {
+    @include sprite-asset( share_fb_normal );
+}
+
+.bt_share--facebook:hover .bt_share__icon {
+    @include sprite-asset( share_fb_over );
+}
+
+.bt_share--twitter .bt_share__icon {
+    @include sprite-asset( share_twitter_normal );
+}
+
+.bt_share--twitter:hover .bt_share__icon{
+    @include sprite-asset( share_twitter_over );
+}
+
+.bt_share__icon {
+    margin: 0 auto;
+    position: relative;
+    top: 15px;
+}
+
+.bt_share__cursor {
+    position: absolute;
+    top: 19px;
+    left: 15px;
+    @include sprite-asset( share_selected_arrow );
+    display: none;
 }
 
 .menu {
