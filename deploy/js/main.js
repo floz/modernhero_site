@@ -932,7 +932,7 @@ Main = (function() {
   };
 
   Main.prototype._onGallery = function(e) {
-    if (this._currentModule === this.gallery) {
+    if (this._currentModule === this._gallery && this._currentModule._opened) {
       return;
     }
     e.preventDefault();

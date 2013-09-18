@@ -55,7 +55,7 @@ class Main
 		return
 
 	_onGallery: ( e ) =>
-		return if @_currentModule == @gallery
+		return if @_currentModule == @_gallery && @_currentModule._opened
 
 		e.preventDefault()
 
